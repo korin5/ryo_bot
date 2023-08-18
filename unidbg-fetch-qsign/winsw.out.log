@@ -1,0 +1,429 @@
+23:40:08.190 [main] INFO ktor.application - Autoreload is disabled because the development mode is off.
+23:40:08.357 [main] INFO ktor.application - Application started in 0.185 seconds.
+23:40:08.359 [main] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+23:40:08.368 [main] DEBUG io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false
+23:40:08.368 [main] DEBUG io.netty.util.internal.PlatformDependent0 - Java version: 20
+23:40:08.368 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+23:40:08.369 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+23:40:08.369 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.storeFence: available
+23:40:08.369 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+23:40:08.369 [main] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: unavailable: Reflective setAccessible(true) disabled
+23:40:08.369 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true
+23:40:08.370 [main] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable: class io.netty.util.internal.PlatformDependent0$7 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @683dbc2c
+23:40:08.370 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, int): unavailable
+23:40:08.370 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+23:40:08.391 [main] DEBUG io.netty.util.internal.PlatformDependent - maxDirectMemory: 8535408640 bytes (maybe)
+23:40:08.392 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\WINDOWS\TEMP (java.io.tmpdir)
+23:40:08.392 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+23:40:08.392 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+23:40:08.392 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: -1 bytes
+23:40:08.392 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+23:40:08.394 [main] DEBUG io.netty.util.internal.CleanerJava9 - java.nio.ByteBuffer.cleaner(): available
+23:40:08.394 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+23:40:08.488 [main] DEBUG io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 40
+23:40:08.493 [main] DEBUG io.netty.util.concurrent.GlobalEventExecutor - -Dio.netty.globalEventExecutor.quietPeriodSeconds: 1
+23:40:08.495 [main] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+23:40:08.495 [main] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+23:40:08.497 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+23:40:08.497 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+23:40:08.499 [main] DEBUG io.netty.util.internal.PlatformDependent - org.jctools-core.MpscChunkedArrayQueue: available
+23:40:08.536 [main] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.processId: 6212 (auto-detected)
+23:40:08.538 [main] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv4Stack: false
+23:40:08.538 [main] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv6Addresses: false
+23:40:08.542 [main] DEBUG io.netty.util.NetUtilInitializations - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+23:40:08.543 [main] DEBUG io.netty.util.NetUtil - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+23:40:08.554 [main] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.machineId: 04:7c:16:ff:fe:1c:22:7b (auto-detected)
+23:40:08.558 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple
+23:40:08.558 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.targetRecords: 4
+23:40:08.567 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numHeapArenas: 40
+23:40:08.567 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numDirectArenas: 40
+23:40:08.567 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.pageSize: 8192
+23:40:08.567 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxOrder: 9
+23:40:08.567 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.chunkSize: 4194304
+23:40:08.567 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.smallCacheSize: 256
+23:40:08.567 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.normalCacheSize: 64
+23:40:08.567 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+23:40:08.567 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimInterval: 8192
+23:40:08.567 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+23:40:08.567 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.useCacheForAllThreads: false
+23:40:08.568 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+23:40:08.573 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: pooled
+23:40:08.573 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 0
+23:40:08.573 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+23:40:08.581 [DefaultDispatcher-worker-1] INFO ktor.application - Responding at http://127.0.0.1:2333
+23:41:11.456 [eventLoopGroupProxy-3-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkAccessible: true
+23:41:11.456 [eventLoopGroupProxy-3-1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkBounds: true
+23:41:11.457 [eventLoopGroupProxy-3-1] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@4ff0869
+23:41:11.473 [eventLoopGroupProxy-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacityPerThread: 4096
+23:41:11.473 [eventLoopGroupProxy-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.ratio: 8
+23:41:11.473 [eventLoopGroupProxy-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.chunkSize: 32
+23:41:11.473 [eventLoopGroupProxy-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.blocking: false
+23:41:11.473 [eventLoopGroupProxy-3-1] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.batchFastThreadLocalOnly: true
+23:41:11.556 [eventLoopGroupProxy-4-2] DEBUG org.scijava.nativelib.NativeLibraryUtil - processor is INTEL_64 os.arch is amd64
+23:41:11.556 [eventLoopGroupProxy-4-2] DEBUG org.scijava.nativelib.NativeLibraryUtil - architecture is WINDOWS_64 os.name is windows 11
+23:41:11.556 [eventLoopGroupProxy-4-2] DEBUG org.scijava.nativelib.NativeLibraryUtil - architecture is WINDOWS_64 os.name is windows 11
+23:41:11.556 [eventLoopGroupProxy-4-2] DEBUG org.scijava.nativelib.NativeLibraryUtil - platform specific path is natives/windows_64/
+23:41:11.556 [eventLoopGroupProxy-4-2] DEBUG org.scijava.nativelib.BaseJniExtractor - mappedLib is unicorn.dll
+23:41:11.556 [eventLoopGroupProxy-4-2] DEBUG org.scijava.nativelib.BaseJniExtractor - URL is jar:file:/F:/GitHub/ryo_bot/unidbg-fetch-qsign/lib/unidbg-fetch-qsign-1.1.5-all.jar!/natives/windows_64/unicorn.dll
+23:41:11.556 [eventLoopGroupProxy-4-2] DEBUG org.scijava.nativelib.BaseJniExtractor - URL path is file:/F:/GitHub/ryo_bot/unidbg-fetch-qsign/lib/unidbg-fetch-qsign-1.1.5-all.jar!/natives/windows_64/unicorn.dll
+23:41:11.557 [eventLoopGroupProxy-4-2] DEBUG org.scijava.nativelib.BaseJniExtractor - Extracting 'jar:file:/F:/GitHub/ryo_bot/unidbg-fetch-qsign/lib/unidbg-fetch-qsign-1.1.5-all.jar!/natives/windows_64/unicorn.dll' to 'C:\WINDOWS\TEMP\nativelib-loader_2358122602473647985\unicorn.dll'
+[FEKit_]info: device_token_entry.h:87 initUin 1878464932
+clock_gettime clk_id=1, tp=RW@0x40eaebf8, offset=1733165000, tv_sec=1, tv_nsec=733165000
+[FEKit_]info: device_info.h:583 start create xwid
+clock_gettime clk_id=1, tp=RW@0x40eae888, offset=1753477800, tv_sec=1, tv_nsec=753477800
+clock_gettime clk_id=3, tp=RW@0x40eabf50, offset=1815262100, tv_sec=1, tv_nsec=815262100
+clock_gettime clk_id=1, tp=RW@0x40eae888, offset=1820439700, tv_sec=1, tv_nsec=820439700
+[FEKit_]info: device_info.h:610 create xwid complete
+clock_gettime clk_id=1, tp=RW@0x40eaebf8, offset=1822651500, tv_sec=1, tv_nsec=822651500
+clock_gettime clk_id=1, tp=unidbg@0xbfffd698, offset=2443557200, tv_sec=2, tv_nsec=443557200
+[FEKit_]info: device_info.h:620 start create xwid step2
+clock_gettime clk_id=3, tp=RW@0x40eac010, offset=2513899300, tv_sec=2, tv_nsec=513899300
+[FEKit_]info: device_info.h:629 create xwid step2 complete ret is 71
+[FEKit_]info: device_token.h:89 create new xwId complete
+clock_gettime clk_id=1, tp=unidbg@0xbfffd678, offset=2533855500, tv_sec=2, tv_nsec=533855500
+[FEKit_]error: o3_channel_encrypt.h:275 gen new channel
+FEBound.transform(4bf61109c714e65408e19c00e63ee2c61dcd215ff6dbdeff99079bfef8934887) => f31860a0f4a802271360f594dae15ddb58c1b04985b7c1868099f87b2b46f4e6
+[FEKit_]error: o3_channel_encrypt.h:491 est check: 6794441ba6838a4413f4102d68868e1e6ad2d8dd826dbec1f6565ea5265f85083fb7ecce3d3ceffc217922b6a351b75f
+[FEKit_]error: ChannelManager.cpp:72 o3cm@S: GetSecConf, trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Establish
+uin = 1878464932, id = 0, sendPacket(cmd = trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Establish, data = 0a0a476574536563436f6e66122102a39aeea2f691093853f0c9eaab9898f7f6cd4d9a0d4fbabfae0691dcc476567a22423833633536323337366539323963626161353837383730666262373264386337663363666539373731646631343830386562333061613931373932336664643563652a4810702467bee11f923ffca57faccb1f762a1415495b0de76c19d3d464b2ddd2e251ec36cfc81d0df5c0c1eafb9299fafbfc3c7b17a6ca42915ddab1498741ec0346120a7ae698c0d632205ebbbaa3a337a50798b72b7ceebdc5f8c56a3124ac7c2ff8d331fb8cbf57f3283a306794441ba6838a4413f4102d68868e1e6ad2d8dd826dbec1f6565ea5265f85083fb7ecce3d3ceffc217922b6a351b75f)
+[FEKit_]error: device_info.h:179 jniGetAppVersionName:8.9.63
+[FEKit_]info: device_info.h:538 538
+[FEKit_]info: device_info.h:540 540
+[FEKit_]info: device_info.h:542 542
+[FEKit_]info: device_token.h:247 begin pack
+[FEKit_]info: device_token.h:249 pack buff result len:1180
+[FEKit_]info: device_token.h:264 begin sendmessage : len :1180
+[FEKit_]error: o3_channel_encrypt.h:442 ecdh repeat establish
+FEBound.transform(7307eeff68da3737d98bc770c215d921798489bf92cd4e26a18238366e35a89c) => 15ad9b3918b465589051b0b43325637e16291169b672f1ac355e37224ee5e459
+[FEKit_]error: o3_channel_encrypt.h:491 est check: feff0a8f83f6ff97e10f33322df3ca17639aafa0d137aea35d6836769cca0363f5afd0fc74697ecfb62a3d7d283d5829
+[FEKit_]error: ChannelManager.cpp:72 o3cm@S: getToken, trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Establish
+uin = 1878464932, id = 1, sendPacket(cmd = trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Establish, data = 0a08676574546f6b656e122102a39aeea2f691093853f0c9eaab9898f7f6cd4d9a0d4fbabfae0691dcc476567a22423833633536323337366539323963626161353837383730666262373264386337663363666539373731646631343830386562333061613931373932336664643563652ae7091f724eabe435337a81665dc3585ff1e1e7a12f0090399dbc435b6b335dc56604462e4c65ddf6f268fea2436345ee461bcb66644394a5282524b70be46ed7aa21be59ddb0ed2c9abb44da8a75c3c5e465cbfae4be37b7902e3821cb8a55abac9092acadc8d0d6e004ac2e18294ac6536dad991ff650c8be2d37864ffbbdab1e2ed6831cfb3523a6f3b0ddb0302a06e8df1888e4e585fd12dbc06da2db68076ff748acf4d5fa43f0933dd21aed61bbf4e1cb1190cd2266aaba9e3964bc1440dd2de89412170bfd206f2cba44c52a7f6df07b369470375cb03403e9093d89a8fca98bb8ac40f355fbe1b9cc48a19278a1b6996f52ffc27df0e09a2924de94b71203ea4b85d5408e2fc7b2377187fafb08d8077c82a195c39d0657f1ed6710d169a06c63e80feca27dcbfdfd4a263a8f70d816f83aa25f797b1b372af13549d575d541742d09a20b73e22b2794b0fa5301e782c747e45c89ebea86b03598216044f13759726bba51ebca659357247560f49fa983ea90ed9a895c8c4b2ba8db75b37db866f901a2dc7dd0e311b6ed04d182f6f59a868f4f839c9afeac77877e4b82d098f0fd1f6a4bc0efbdf46eb340e06bb7f03f8938285ea0e00125c3c95d08f1f17e822db21a5e8659c2ec8009d80e8f941e9099ddca74c09dfffc2e8bbb64e1cfd427323ebe76f7b6cd193491e2c11b4b4168f007c00c821665df6ab93e353bc045e3f80462139089c99fb4f77b222d96eb3cd2948f0341bda1fe4be80512d27ad5df3aa11f7b9c6ace00c9eceed817ded6d66104ce0f3eec3ef67652594beb859b32333ddb985d5cf74cdfe0092051f021d2abe0b339e46a4484c4dbb3df7eb6377e8694236719fd260529cbc2b51eb0957ed01e893541e2d73b23b0f36c21e2b25d5a4b76cced09ed5a8068d66ad881cfd568e246af297a49f7a545534d76093ef4648f5842b29f96df7914a683c0a343b389354389677efef4c5d9b1ccbad946d0150a65ae2ddbbfb7574af3c784bf864f0413beaee6b40791dd1db20c64c3a2fb3ac6c2057e6dc897458566acba7837922f437730acd4a99879b58d68e48e45526757cd645529f22246d615dd8e0e2306a6e5ecfc58f2ec81fba15e230ec3306a5f9a60a7f3aca13a2cab0401649e9e6ceeeec34853db07bd735997bd0193518425f67db93ea77a9deae6c2551dac01ac912dd09ecd976ffec0bfb2cb53eb6c64a0775ad298ad068c878075c2142c536126f7284de563b3ca0fd644b1492965df7362b2146c576adae9df16ed5ee03ca713cccb833d260b80eb8c1577c6d6de2d6bac917d0162584a8142644a1988929cbbe9c8cc63259b68a9502818ea796f1aa1c9ce241fc7ba72a5606a34cda4d7a2beaaa0d8c8f616666b6f0ec5bdff13654f8a3ef94f56f5de26db9f7b26913bb64ccfc516921fed4574e33c64c551bff3be77f5ddd7b29cdbc4f990ca9ed5ae8db09eeeda1fb5a3af51c9a7ec1e3730ffd2e6e03649ce70cba950e1bf01c1737b3c554fe85369099a23c6d95fd50830246a627236d4d25085dc52ade255747e919298512d082a5152e4a2670aaecc00695c31f8d9d34795512066dd065689e47cbc49e0099904a54a0e9f1f5bd0c59d9ac36d031ea145313dbf40ebf364f331d347c3654e96c55f06c793446d6c032e1743da5777a62e602272cdb1580ad29b0c1c281167149c3e101b1f74e6560ffa6817216d7a8d63e71928aac4e58ed6bc190a5236ae551b28ba442bbcb99c60f751996a813fb232205ebbbaa3a337a50798b72b7ceebdc5f8c56a3124ac7c2ff8d331fb8cbf57f3283a30feff0a8f83f6ff97e10f33322df3ca17639aafa0d137aea35d6836769cca0363f5afd0fc74697ecfb62a3d7d283d5829)
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:wtlogin.exchange_emp
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692373274417000000, tv_sec=1692373274, tv_nsec=417000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692373274419000000, tv_sec=1692373274, tv_nsec=419000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2863513600, tv_sec=2, tv_nsec=863513600
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2865108900, tv_sec=2, tv_nsec=865108900
+FEBound.transform(f7df0102000103fcf4c5f4000664b87247ec3d8397a2850000000069736f7700000000) => 9b4720af2d931e89b77ac1940a328418fb72c757b41b20951d951d4de73b46832ea62e
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Establish
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692373274679000000, tv_sec=1692373274, tv_nsec=679000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692373274680000000, tv_sec=1692373274, tv_nsec=680000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=3102617400, tv_sec=3, tv_nsec=102617400
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=3103371000, tv_sec=3, tv_nsec=103371000
+FEBound.transform(cf4b010200010327251425000a6040ba403ab15e398f5e0000000032713a7300000000) => 61f520af2d931ea8f4d78f940534fc2dfedf0048aa0a81951d951d2ee9ed45832ea62e
+[FEKit_]info: ChannelManager.cpp:97 origin cmd:GetSecConf ,cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Establish
+[FEKit_]error: ChannelManager.cpp:100 [ChannelManager:OnReceive] success:1 cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Establish bcmd:GetSecConf
+[FEKit_]info: task_handle.h:74 TaskSystem not allow
+clock_gettime clk_id=1, tp=RW@0x410feae8, offset=3297263000, tv_sec=3, tv_nsec=297263000
+clock_gettime clk_id=0, tp=RW@0x410feae8, offset=1692373274913000000, tv_sec=1692373274, tv_nsec=913000000
+clock_gettime clk_id=0, tp=RW@0x410fead0, offset=1692373274914000000, tv_sec=1692373274, tv_nsec=914000000
+[FEKit_]info: task_handle.h:74 TaskSystem not allow
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Establish
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692373275244000000, tv_sec=1692373275, tv_nsec=244000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692373275245000000, tv_sec=1692373275, tv_nsec=245000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=3667614900, tv_sec=3, tv_nsec=667614900
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=3668364100, tv_sec=3, tv_nsec=668364100
+FEBound.transform(b716010200010333c1c8c10003bd0857eb66ac79c08f8e000000002e34323900000000) => bb5820af2d931e5dd574b69407bc049643b84af0fd0a21951d951ddbf8e8d3832ea62e
+[FEKit_]info: ChannelManager.cpp:97 origin cmd:getToken ,cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Establish
+[FEKit_]error: ChannelManager.cpp:100 [ChannelManager:OnReceive] success:1 cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Establish bcmd:getToken
+[FEKit_]info: task_handle.h:74 TaskSystem not allow
+[FEKit_]info: device_token.h:286 response len :20
+[FEKit_]info: device_token.h:309 DeviceToken::saveToken ok! expireTime:1692459675
+[FEKit_]info: device_info.h:538 538
+[FEKit_]info: device_info.h:540 540
+[FEKit_]info: device_info.h:542 542
+[FEKit_]info: device_token.h:247 begin pack
+[FEKit_]info: device_token.h:249 pack buff result len:1194
+[FEKit_]info: device_token.h:264 begin sendmessage : len :1194
+FEBound.transform(64726fbfb48d865e196adab634b504c2a61b1a72cc56ca4aadb7abd910a7b033) => a7835d696902222ac0e3d2c2f8b507d87a5565fff0c134f3368928ad1c698cc2
+[FEKit_]error: ChannelManager.cpp:72 o3cm@S: getToken, trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+uin = 1878464932, id = 2, sendPacket(cmd = trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access, data = 0a08676574546f6b656e12c609fcba778c556d079d000858c361dafac4cb8c3060b73c8c9c5d8c2070eba47b03bb5bf0a6f751b4e8609fa6242a4024e119da39e06c4c032382cc20754c25e1f95033db5db3d375236d862870f18030a3412546cb9024cc99c75f2edb800dc4f5256b81dd6da6a849031e64a01f50117f5211a3968bbc2742743860b474305152fc5d5ebb6a6664ec22926488b75ca32a415916c0071c2b7848f0e0aa6e500f8e0a8f00c3ffd8d08672bec69918e624948eacfe4b76091d91d61daf5ad002044e892c4ffc537df5942a87776551966d7e6914a25e0b52d371842e108d76561a197c2bcd9656c37fbf3c9f4aaece953c84ad06424eb55082d452d14f2ec8a12eff4fc2236141df8c860839b6d49269d8290f76a933ece8a049491d8e6114c8d0a5a376b199414ee0c2fca20b2e87f2c42dffc01b03e8563cf0068fca60ae2bf1eeac6cb0c42c67ede86d7669bea85c0717795c561320a96607822a7a07cda9520c2be49fcc705793d71fa4899cc9e0fa97a08c24f37d8e83fcbfe3d047a034951f4c911f4959b686a8496eb967bad914d2a6ff392ffbdbe361a630d9ab6600abe3303f1a7129e28a6e875e3b6f788669ee4c60211463772d1874cb867e8a0543e32a553d76a43a075a394f3fdb354933e64ef1767507ce5546b65d37273fd0322f25c8cbe61f07e07ccf8bbea86e4e71affb54746476ff8af50840e9d841f6a90f688a440905da4e8d5c6210b6701a41c1a138e786b90b038df8fecaa11a45aeb95b1bdceec5699b2668f3f8b9a91e838f7add6a9c9a2e88155c0f225e9775e4ddcd5569c863971c95f56f33b1d38d1a722a142be480f5b12f324d7af4ab88fea3c3beb3b0cd5dbfcbda27ca2a478a7085193667b9669b212bf10edf388be295426bd1b1f7538f1cf1ea20dd4a38bbe5affac13be77cf38b30b043aca8282f788421a509f24f7cdc38d7ab744b83d52d69cac7cbe2a8ec6f12ceb543e71b3a3fa67ea8318d6a2a3a9c877a72590396b23742f6517e434ba34c6f0d1f039386c505f7c1a9bbc3416fc4389b2e2cdc48a1034ad01a9f4d977f7e3bd1a1f30b1e56c0481c48e2ed5e1b6828fb365376362208b17ea109dc0b4c3097c09d332ec51dd7ef26be83fe0fd5167e02eeff295fc297f8b7d4887a36401f03f279f589b0ef315abdea039c54d751d4e79f306be31510ec97cdf9921a3183f3a335015c65e1ed10aefa8cb70507b1ba4445e617da6d605b677d52b661bc20f2954e8394e8bcb5a6021dbd76bc177bfd664a3e8ccae261b30a970301f39041bcd42bda4d946f7511cb4588efa0dab2375b52d0e55bc30d2ad580c128bb51820f1ce06dd0fe5fb32d89225002147571a26c908c053c1f383291126ab2cd2d6ee3ef2583761e6b5b599fc58fc541aaec1f1085ec808e1320261faa3c1ef20b4ce91d186b88180571f24425f87262825826e954af3ec2aa515b533212579b84882d46f6513751c8137f359b9aefeaa16becdb6a91d69f374d87b4d3dccf12615a6ef1d45b18e4cbc7c796e967ef30a941ca66e854e40dfeaecb4ee7f7d58984d79ed86386283a59d0e3181b0ffe995cf5c91f26d79f3e0f506c3998ef44a7a3b1f4de7470be361b0256231612a5970d1a7fc695dd9d63575ebbe4de040b2af62ca5ac6dfb7bc22b1d0d654d35b45bb3a0f0f4915d3cd7c0b7519c91a29b5921867535594572c96099ae64215974541a205ebbbaa3a337a50798b72b7ceebdc5f8c56a3124ac7c2ff8d331fb8cbf57f328)
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692373334844000000, tv_sec=1692373334, tv_nsec=844000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692373334845000000, tv_sec=1692373334, tv_nsec=845000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=63269137600, tv_sec=63, tv_nsec=269137600
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=63269907600, tv_sec=63, tv_nsec=269907600
+FEBound.transform(9e36010200010336241524000ce4c8cf227829f76ee9f100000000693e713f00000000) => c9d820af2d931e5cf7da81940d0234d50c84b13c1be0a3951d951d4dfe7ade832ea62e
+[FEKit_]info: ChannelManager.cpp:97 origin cmd:getToken ,cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+[FEKit_]error: ChannelManager.cpp:100 [ChannelManager:OnReceive] success:1 cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access bcmd:getToken
+[FEKit_]info: device_token.h:286 response len :20
+[FEKit_]info: device_token.h:309 DeviceToken::saveToken ok! expireTime:1692459674
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:wtlogin.exchange_emp
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692373839933000000, tv_sec=1692373839, tv_nsec=933000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692373839934000000, tv_sec=1692373839, tv_nsec=934000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=568356899300, tv_sec=568, tv_nsec=356899300
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=568357617800, tv_sec=568, tv_nsec=357617800
+FEBound.transform(ae520102000103eb311831000e40704cc4b90e97477ef900000000466b4a7000000000) => 793320af2d931e0b55d436940e544cf967eb2bcce4dca8951d951df2425d4c832ea62e
+[FEKit_]info: device_info.h:538 538
+[FEKit_]info: device_info.h:540 540
+[FEKit_]info: device_info.h:542 542
+[FEKit_]info: device_token.h:247 begin pack
+[FEKit_]info: device_token.h:249 pack buff result len:1194
+[FEKit_]info: device_token.h:264 begin sendmessage : len :1194
+FEBound.transform(63dc112e88e73377ee37d27533be7af9aa549c842d23621cabea9f487c0b5cad) => a542600848e96ed86149d3bcf7b1426c7239da525e6f7fc93863fbfaed87b844
+[FEKit_]error: ChannelManager.cpp:72 o3cm@S: getToken, trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+uin = 1878464932, id = 3, sendPacket(cmd = trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access, data = 0a08676574546f6b656e12c60978e3917916370613857c86bd0f5fb96e2df8c204a891d5a389eb802d9edfef49755aca0d3076fa5f7cdb5d5a4ce3420b5b269b5e0bab7f5ca28da3ed542476314287f10546571fe0b28579d8ec5ef20b20e712594264b5277f96c124c7763a1f2368b50f52ff53312f4c0366e96edb8efd8562efcfce71d29ec6434a94b11c0955844e0ee5457dc286e6e663c70639b7001eb91e503856314ce92cd6a871dabb9fc776835f779290e5268a9c8b7710f6cb73364cc61f61b3302b10d9b7d224af33121a74033d914ec74828da8d9ef53b9bc710e8e34fe89bb03968f1e832046c65d989746a7ca3fe57e8b8db15b37dec7a4b8c158b674c050eb0f668d0d3d4b726e03b88610bf997b6ed49e97d72066cd97bb97bbbb1591af37cf6e76c88626c6e2fefcdfa9cc312ee784d453ed635c373356c33ef29a4d70da32f5fa996ff34c3530f43885dfd6e6d21d43a3aa3aadc380dd6e1b6d160572b340090bb636f111b135df89971d5e581dd87fa6488c0822c969a2dbb40815bf63331a5f18727c1b416889dd9a7aef345cb5dc00cd60af74c314a6cdc2a83d9a2c39ca290d6b3d64b5b18d0e96c89128c7223fe25f69da4d80c55cc4be9e76f310a5372008564e126927fb42f2d862893c6431c3d2cf7f2d41eddea364785b4edda2d2ee8efeb2814f2893e32250b0b9d79c047bab7f9d9ea3f5290e9f12bd4bcee4c475c3824286b8c7cd6628755bb3b062992ba4aedfd9a2b39e6d39632aaef39b6286e41f479f88f2b01e1bc240ecd8bae808ef40d6170cd5e4f4bc4a4e469c7d7d9059a2b8d4656f95b1eb65431e15f0b1a13a45ff89929e66a55e40aea171d3e7c9a74da79e90403f4aa5b25b6a68a084c13216a05574c1e03e351e5ac821abe817acc8f155e72ea62ab8abb66f39529f050c0061ef445c1008f4e72d79470baafc1ee03b6d24b863d47c168344852db495c4983ab4d8e30958c654750abdb7e80426182ed3e3c4ab5c6e920d242e827f95ccdc0f9039df67feec4b504926e1e6986ff1a16cc05b436e42ce8df2e6aa8cd8e8789d192d53748f600e0e319504dfde78ce4fc432de39b303b9bbce2c01d028fd21f5b40debef7e825763015afee14d30272af6438638e075363349cc452a994b577c62492223b46583f17c98db03b405de8ed2969ddd177f37534ea6d744a85742a3d6ff86158cf99e8465dfd454792e8a8d1d4a91dbba455a63522fa2a04576c1f3c4b86ecb5a18761f7e9387a5417c9b4db6ea74da256f0f4551c44a75cc7930c9b2704d010790aab2e03a19c8ccac9976ab7782439fe0e34062ab770fc832a05b5748b47e91392b02d872ca8c6f1bdc5e21db3c9a90268de14e674f36fac38f8b982d2fa7118f86f53f32db6b62421f1047d8c6cdbe79fd54fdf6a6ca6e40dccde08fc84e66b932063fc1a23ada37b3a44d8f80b934c4a49a961f1ebfc1570158f7c81a3b1960f8fffcc0fbc0963e0faf47bdf86de2b228a18ceaea94878938ab16e63e2d79eaa48c9ecc6836bd313091c181ca3dfc0d95a556bfbd26947e451321774ad69f5834471a990e032fc887b551c65cba0971410a801f98ea7a0f3c1ba23f447cc2b26a3bb9327acef1c83f25bf7ff74b8d507f40126298bcc2701dba5c7dce13b8bf3390d485ad761b37f4a1c03bb1f73e5dd87b8e845070bb1f1c3838452b598ac2b12e99e4ba9e8af44c01d5842e6d9040e1a205ebbbaa3a337a50798b72b7ceebdc5f8c56a3124ac7c2ff8d331fb8cbf57f328)
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692373840152000000, tv_sec=1692373840, tv_nsec=152000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692373840153000000, tv_sec=1692373840, tv_nsec=153000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=568575624800, tv_sec=568, tv_nsec=575624800
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=568576440900, tv_sec=568, tv_nsec=576440900
+FEBound.transform(e962010200010337c3f6d3000255a84f2cc83cbf77771e0000000039303f3300000000) => 46b320af2d931e58dc22da9403f5e4f500c4ca69c4d9b1951d951d2dfcebd5832ea62e
+[FEKit_]info: ChannelManager.cpp:97 origin cmd:getToken ,cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+[FEKit_]error: ChannelManager.cpp:100 [ChannelManager:OnReceive] success:1 cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access bcmd:getToken
+[FEKit_]info: device_token.h:286 response len :20
+[FEKit_]info: device_token.h:309 DeviceToken::saveToken ok! expireTime:1692459675
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:wtlogin.exchange_emp
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375157181000000, tv_sec=1692375157, tv_nsec=181000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375157183000000, tv_sec=1692375157, tv_nsec=183000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=1885628992500, tv_sec=1885, tv_nsec=628992500
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=1885630056300, tv_sec=1885, tv_nsec=630056300
+FEBound.transform(ea0001020001033226e3d60002cad8496ce1cc2d772707000000006236643d00000000) => 42a620af2d931e51fe6bd99403cd64fca07e3a04c46915951d951d4efa32d1832ea62e
+[FEKit_]info: device_info.h:538 538
+[FEKit_]info: device_info.h:540 540
+[FEKit_]info: device_info.h:542 542
+[FEKit_]info: device_token.h:247 begin pack
+[FEKit_]info: device_token.h:249 pack buff result len:1194
+[FEKit_]info: device_token.h:264 begin sendmessage : len :1194
+FEBound.transform(5705f734a5da57c36db0a32dacde6c5fd2bf9eb60d14a1ea1f1992ebd08f1299) => 3baaafd291b4856da6852ad16d11a8958ce7db6b2ea89303cfd6f3367cab2d5c
+[FEKit_]error: ChannelManager.cpp:72 o3cm@S: getToken, trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+uin = 1878464932, id = 4, sendPacket(cmd = trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access, data = 0a08676574546f6b656e12c6090ed6d07d96f8a6a63656c982826d5ac24405a258f967c937624dde386f5d1d7abee5df9c28da297f012f0fdc31c9bfb1681b57b2d4f038c426d49610b8892f95764ee29610878b12281c88b7ebb96c1bd3555827f1543ce625246ad83d66f0e3d88316542f64fcee75e92d70b2cc0b5a666e76e6a6c786cb192bbec0b1a0e8d419d54c26e6c2884544f0583586050523a79a4c6dd9ae2b21f5a8970186bb892c19887e3b854f665a1a4f72c0c990e4f333216146cc2c5ce90aebff53b33aed924d8dfbc03f639f1236bfce64665ef2d1b74f5650a5782b4bdf27923face9da203ad4d11db343c016688774e20c7ff097f9384dbd0f135085f835f94da6e1b450e8ac8a30a2e3c1b2139b99ed866a12591e1905ad9d7d0c0e01080c61ce4ff5e8ca6080813614b53d0667ee0649c453dc4fd28ffb20e6404da1307d7d28831d036add6cf1b2a4834ab4947a91feedc5135de5d8856ba4e98b9a17a5997c4107976abdcc574a1da38fae4752c063f08b9190a1544c1acbbb99168675178739327b76111c7a0cfafda0bae70d2001dab389a7c7dd6fa73ba2ff22853fe607ddb13ededf73356c25c6448ee93bf003858c485a9e7e13815339a899f4d5dd0ab5a44e128c6abb2b99688182a822a17553fa8a7b31118129ceb1449bed05f962e6997e6dd8eff6205b906b041fcb46c5741b369b4e511d1135cfbe08921224acc0e65d3d4c789b89766b9e7d7cc8dec722e25d4703206e7d57e88c30091237ef722da0d44db0065d652b183ce515e59b6d168b5a65d17f735319cb3e1c9d4c2b9377fed666103b784964a25bc23aab2e68db95292323407a13e91ff93ddf48ece920a07df9e1e152b3d53f3b425cdc4dba1cab6898820e3b2206a272a321fbc321b7056d077ae1da7f26f712b01ef0e52b405172d545cb0e2ee2f82d6df3a2a92290ada794222f0a6cf7206eb97c287c93aae8a5cf543bc76ed95ec11cb900cb0002b454d0ac7e2146fdf03a4eccc54fd0695ea98d66a46dca3bd402543cb454b49294cf0c80cb6a9f03ef561a3786d2c09f6fc273edafd87713aeedd6a39b6a40844ad2b9b37790fb5f61a2f8db85af8df98426d58ef400f0e13e3938abaeb70c4dbe83f0cb7fca7d49907e7762c75e2cd74d3e9bf5e6e0e0595164c901fff16cccded5da2cc5b44520b406a158fc7759fbf95f67142e6e081b73cb9198071c04298a17a4b9a8e43e9f277dc1e4cad88a955db6d82600ddc183f232f10b043cebeabde391692242be0cb2af987deb6e06c969775529612ce2bfc0f79d4273badb250d35b3a330a2c52f805cc8ca5afb00260904a3898353ea084867274e9489c11f2b35a9f4ba83d3ab73e13500e06084ce0578adbf4d37ba8405a022403b6b205858d5505297d135ad19ed3b560bcc4ea6403e3658588a59542b0f54063fe033851e2d35ab20c896e980b05206d2f6f504e351831765531f2cad691de893d14898d6ddca232244692f31bd96b8edc5f4580455f8af692e61484fed9d2e4f757acc807b7f43b8c7e3acc6fc8137de346ce05a216c3e325ce7484d0a9b33d6a5685e9615ffeca1aaf90b80ae912486270c9330474b32b988d59964e32bd2ea3f13442c78d624d153ee4ab793a63c36eea6817de6c464428f69fcb58ede53eea65b830631a336f1f5a0c88ca2a6bb0bb28394bc86a86b09ff9a6785e274241cc0c2eb02f6bea327de5f1a205ebbbaa3a337a50798b72b7ceebdc5f8c56a3124ac7c2ff8d331fb8cbf57f328)
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375157445000000, tv_sec=1692375157, tv_nsec=445000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375157446000000, tv_sec=1692375157, tv_nsec=446000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=1885870849600, tv_sec=1885, tv_nsec=870849600
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=1885871577100, tv_sec=1885, tv_nsec=871577100
+FEBound.transform(f7450102000103f521e8a10006ce30b49c2838158fbb39000000006a70727100000000) => 9bfa20af2d931e82f56426940ac1dc20c064c87a438768951d951d43ec784b832ea62e
+[FEKit_]info: ChannelManager.cpp:97 origin cmd:getToken ,cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+[FEKit_]error: ChannelManager.cpp:100 [ChannelManager:OnReceive] success:1 cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access bcmd:getToken
+[FEKit_]info: device_token.h:286 response len :20
+[FEKit_]info: device_token.h:309 DeviceToken::saveToken ok! expireTime:1692459674
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:wtlogin.exchange_emp
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375231965000000, tv_sec=1692375231, tv_nsec=965000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375231966000000, tv_sec=1692375231, tv_nsec=966000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=1960390915400, tv_sec=1960, tv_nsec=390915400
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=1960391725800, tv_sec=1960, tv_nsec=391725800
+FEBound.transform(7f420102000103c0fddcfd000ebd70aee7fa55fe2bf3cf00000000303a324100000000) => 11f320af2d931e65b6cfce940ebc4c474b1f7c385f4f3b951d951d24f5e8fb832ea62e
+[FEKit_]info: device_info.h:538 538
+[FEKit_]info: device_info.h:540 540
+[FEKit_]info: device_info.h:542 542
+[FEKit_]info: device_token.h:247 begin pack
+[FEKit_]info: device_token.h:249 pack buff result len:1194
+[FEKit_]info: device_token.h:264 begin sendmessage : len :1194
+FEBound.transform(6ff5a97bca51c5c7be9143588c74c154fb6b31dde4fb5c6e4e73af274cadbe71) => a11a41f6fcc3306841b00a5a5d723b9093b5c094d947897a210b2bd5cd6c891e
+[FEKit_]error: ChannelManager.cpp:72 o3cm@S: getToken, trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+uin = 1878464932, id = 5, sendPacket(cmd = trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access, data = 0a08676574546f6b656e12c60987dabd8719dd0df013c74d8be86e592fc457d5c3ad5b8b72642cda1e40ac4eec7b197114df00bf2cce0a09933244c91aeec70392851b06701d481b3898966d482ba15180e7d6b6bd9e4656d839d5d274a1e4da7436763e1bc966abcca83d6427906af9288adff3cf1fb65fb92f580b8e195b8b69271334a95b170990844d3f7360be5e9927d01a7f5ff5997bbece8d5949bcab0232fb518de084c07491d13ce68c0888b7baf5b24d1c532f08d3c1820d42189696bee767a8eaae125fb14abfd32f5211839e8ce49d9701722321426babd326f6eeb044c902cf79978290048fd61e886daf6c4c44e13f4e417724e59c694450886889d362d98946734e81554f727ad9ca3e5477307a8fecee062760a98c9b5f7cd06cde777c0519145b1126acf43393a814b1eedffe82603565fc0c614f649b6b14d001f12ec641f2a5760824a2f849f439256a05908012af1582c7fb6ca55de0313d7fa24726c9aad9fcc45732c111dbb91f5722eb007a32d8fbcee80469f9aadec294fc265e4e52734b827573ea330ac704140e63ef1c05d2c9f1e2992b7fb07b1a6c5439fa04ae864385119952e06a355fc9c4f878d94c8b8f609b7aad2178f49fbf8fb9f04a6eb960e995c32c535dd3473cb96f956b583015f2ffbe3671c073292da6aca3a4a4e98572460e17d2a9611a104a9f47a471b22867ffd85e2bc42119ea4c7e4579dc778f03ab894ab56ecf1dff7ff73fb7e568ffae01d9f02d8bfbeb39e18e6d3ccc1407652a623e9a3ede125c86ec07a2ee3444199b9ae8e64719a42766ea066b9798dc7aabebcba7f74af2dd3b627714668d268f42cd3e57109c14cb472db7810a3f70b3bff1aecacc02e22c5f109df168ba18dbb08f6341a1e6e9c73311256c588cfdf26297402dcf05c35ebae3d7cab60f537747696315f4c2b5c0849850fdb24b1228024442dcc0576f58f47c7e807d82db77546ae55129a2de9641686d6e83435982f546607815acad40bd5897e73a328edd93341179a1da2778b13a676eb1c6db1f424e7e9ec1aa1d607c34f38976267c1862391aa780eedf40ccb5e4c6e8c6956cfb884a08bdd5b846c452d9c4ac4d693727625652e27f3782c274714f9f1d4a0618714413ddbba9455b6b61cc537da4344fbaa6c96884ead4c64ff126d64eedc08fb4c882abf768bc52265ff80f0abc6bd4c92b2711c13d22e32933af593ddbf318fad08a2245fc873c001c7dcd034c26e7c3557c60458a9db6b69c03635d54eb0e9540fc5ff03051ad7ec0d2bc6517c78631bcd1cf6e24528740c3c4037258a4f7bc7b32f15546981fd09d721f8fe48c6024864d49e860e6dd6ec59d21fc45f20d26cfc094d03633c55c4f848f7c9ba87934e4b6d266a8d2a766bbc370d8079c770101bc8ecd8156bc65582a51e35c7d0544bc7f5e6ab10d4dae2572dd6715f6f106c2c0a866d86705891580d6f68612c50412da2ebf0e83c029a833ce8e4644cdc1e5f3813fe69489e792332c1edde15b4539a156d90b599fc55cb740144ff5d6a8e5bcb4cd5dc22b220b796ae349b9b5452daf5ec37f63c3d5860c02a1db9f14cafa4c72bcd1c2660c62e5eff5bffd632020931dcc56837cb93c76cffedeec0b6e2db5f677c7652d1b50ceb6d16f96707f5a6a22aacd7284420b94bc63f0cab72463edb06872f2d4c4c09fe0dcb3b21bdd522c2dac1e33657ecc937ffa64f70acf7e6d64d272781a205ebbbaa3a337a50798b72b7ceebdc5f8c56a3124ac7c2ff8d331fb8cbf57f328)
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375232220000000, tv_sec=1692375232, tv_nsec=220000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375232221000000, tv_sec=1692375232, tv_nsec=221000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=1960643604400, tv_sec=1960, tv_nsec=643604400
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=1960644368400, tv_sec=1960, tv_nsec=644368400
+FEBound.transform(57ff01020001032cf2c7c200035f484766030539bad7d300000000332b373000000000) => 3b1720af2d931ea9b979b39407fbf4f6aaa02cd06cb9ce951d951d2792e9dc832ea62e
+[FEKit_]info: ChannelManager.cpp:97 origin cmd:getToken ,cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+[FEKit_]error: ChannelManager.cpp:100 [ChannelManager:OnReceive] success:1 cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access bcmd:getToken
+[FEKit_]info: device_token.h:286 response len :20
+[FEKit_]info: device_token.h:309 DeviceToken::saveToken ok! expireTime:1692459674
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:MessageSvc.PbSendMsg
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375249926000000, tv_sec=1692375249, tv_nsec=926000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375249927000000, tv_sec=1692375249, tv_nsec=927000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=1978366826600, tv_sec=1978, tv_nsec=366826600
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=1978367923200, tv_sec=1978, tv_nsec=367923200
+FEBound.transform(fb7201020001032628e1a8000e25180d50483f67da29ea000000007046744b00000000) => 938320af2d931eacf36027940ed524843ef4cd1c0c6004951d951db4ca72fa832ea62e
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:wtlogin.exchange_emp
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375292065000000, tv_sec=1692375292, tv_nsec=65000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375292066000000, tv_sec=1692375292, tv_nsec=66000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2020504015200, tv_sec=2020, tv_nsec=504015200
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2020505063600, tv_sec=2020, tv_nsec=505063600
+FEBound.transform(f3e9010200010331c2f7d2000101d02ab3ce211d087b96000000003d23452400000000) => 957b20af2d931e54d929d394098a6c7db5ccb07428d742951d951d21975517832ea62e
+[FEKit_]info: device_info.h:538 538
+[FEKit_]info: device_info.h:540 540
+[FEKit_]info: device_info.h:542 542
+[FEKit_]info: device_token.h:247 begin pack
+[FEKit_]info: device_token.h:249 pack buff result len:1194
+[FEKit_]info: device_token.h:264 begin sendmessage : len :1194
+FEBound.transform(e5b11a71190dbf9e789ef102be6bd194c18768bd24a6d19989be0e9654d6475a) => 4fee65f17a92ebba73bcc69e8e376b506d2d58645911c3b0e08c1462b81ff69d
+[FEKit_]error: ChannelManager.cpp:72 o3cm@S: getToken, trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+uin = 1878464932, id = 6, sendPacket(cmd = trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access, data = 0a08676574546f6b656e12c609489c673c1011809c9b1901a33da43b1f90d5ed60625712dd0550ed042cd426afc8409fe30b3e8f175b35c73480817989a0f4eab3a1c34cfcfad132015c326b26dbf20b0f38d6e6365faf470c6b653b6dd46403765a2f7f473663f775f56be9b0f2d34c8bf777f8c59f399ef7727bf61d483276dc2755c837d5f2f6f0afa3d39128ffe11ff2840412ce8d7133499fe89548b986c9897a59f44475402d8143b770c654931b9059a9d7b88d6af692462f26f00e356d4a699e4aad10a0fe19f77b78dec06895dd2d8038676c7a845061f7c9208f49f046a4a16e6757258981eb40456a9e2b498a4eadefcd2e934029e27c3cc8c7908d77a8340c0a5058fd7fe1ce739b20d853fa31f119a6cf1ab3646e56bd8d0a6d5cdf7d40fed3aff7aa797fcfb3c3991ecee62f99c76c07694b17e146a604fa591afcd330f5aa297a732c0732ce5b8f43fca72085855cb70f6bfc7621fa33f2b4210b7f28364f03dd9d8bfda6c8faef07beabc283dd8489fc3cf1f19048d0d6894a7a1d8ed430400df838949819113e7713f4451aacfbb17c2be59c6931e9dce5e5374ecc05fcade0151c10ccf7c6e3c7807eb90b7ca2ebca56a4431d78cbdabe7b1a4269cf7ba2f7f0c6b129640e975774a39cfbe72b9c4992bd0970a58be5924539f34138a3a72c0a2294904ca5ad57e1e33ca5e70dc18b3143e2df01653054c7dc6c8ba2f5caab75aea6082768ef6f9f43682288545d7005272245838d0e3cfd1d1d8b66d75805ccc1fc70f1c9a58c2044d953f8cfb3e1f5deb7eb1c36fd6de5699aa711ed573b34110d026211110f0dd674b66770e4cb8e078e6ef13acc3c2706a7c44f7dba127803b96c1b32fdf50093e7e0d40ffded16c1b8421c86abddc48886b8455bf525a229993ee8bb929a9fe96fcf5711a1d0fb21729e27624cf4cc29a6f18ff9aeee8c84c1c52fc04c038a2299523b747a0e0fa235ec6154a4358e4ce722e0074632db798ba8bdf2a62e3c4c5ebb5054cfe843a44a71dc2a07dfe81ea9d5b174045f258e27a4db396a70135d55aaf76d25d10a12b1567dbaf0085f51e50d57b7cd35a129491e0d888aa7093882f20ba800c21d6984957bf49bbae9ec9ce389dbe8cfeb6d7bc72c5f302ae8d707fc0e418334f9fee350cb91ddaf795bfc90de9931839b1284bd117b98d829d67fa686dcd5f8688079e92ed006a1d0116b13fb0ca8adbe2348bfa7269dbee48e7e9e1d90471dfcf10785fc823a9b092b39c290422c7b3c01febf0dd2e66ba21682206cb3887d81e80a8758b9d915717e447346fc822e23f68e00edd86c508fc0c46989fe912513c5d86944544d83706d3bbf266e527bdada839dbfa9d839794067dccf6186f87376f4c79484dd8e9e759c6590c73175a23c296d3c75cd3df2cd20ab5ac883b7fe93b703e8c46e6805f47f2fb6333d2905d71eb9cf9fecb6c1eb9a81409ec366da8029170dca0356c530f1a984ce8106c7df07e117635edb46150eb5bec90233c43bc703af63e0373735f1790733c458888df27cb771267bd811fdb316ae039c4a6aeb07f76b2b025ab0f510aef892dffd373db3dc693c5647b0f097df1df8da6cdd66e6cb2356246efadbac9582f6276631dcd24de35f3cdc98afa9e537f379093b9ba132ef536620b0475f13d412f3a382a8d1587376d5197a966f7426b340b84355af4a69a01a417bae30f4c44f511dbac19fa4ee9c4b0d3e1b1a205ebbbaa3a337a50798b72b7ceebdc5f8c56a3124ac7c2ff8d331fb8cbf57f328)
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375292315000000, tv_sec=1692375292, tv_nsec=315000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375292316000000, tv_sec=1692375292, tv_nsec=316000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2020739464400, tv_sec=2020, tv_nsec=739464400
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2020740176900, tv_sec=2020, tv_nsec=740176900
+FEBound.transform(ffe80102000103c0c4f5c40004d260777e624e7bfee71b000000004036423d00000000) => 917420af2d931e65d72ab1940818ac1619b3fbf68be9ba951d951df4fa58d1832ea62e
+[FEKit_]info: ChannelManager.cpp:97 origin cmd:getToken ,cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+[FEKit_]error: ChannelManager.cpp:100 [ChannelManager:OnReceive] success:1 cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access bcmd:getToken
+[FEKit_]info: device_token.h:286 response len :20
+[FEKit_]info: device_token.h:309 DeviceToken::saveToken ok! expireTime:1692459674
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:wtlogin.exchange_emp
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375339898000000, tv_sec=1692375339, tv_nsec=898000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375339899000000, tv_sec=1692375339, tv_nsec=899000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2068323006500, tv_sec=2068, tv_nsec=323006500
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2068323763100, tv_sec=2068, tv_nsec=323763100
+FEBound.transform(ffde0102000103f5e7a297000db7b8aca8acad82491824000000007338793b00000000) => 914c20af2d931e826aaef09404b984497402475feaa657951d951db7fb70da832ea62e
+[FEKit_]info: device_info.h:538 538
+[FEKit_]info: device_info.h:540 540
+[FEKit_]info: device_info.h:542 542
+[FEKit_]info: device_token.h:247 begin pack
+[FEKit_]info: device_token.h:249 pack buff result len:1194
+[FEKit_]info: device_token.h:264 begin sendmessage : len :1194
+FEBound.transform(4e246c4b4dbf04ab65fa24f6824aa3dd73065471d784bde867fe423b92144793) => f9695a26ee8a173ba4238172535de5b415a872f10408e60eaa2c0326a322f652
+[FEKit_]error: ChannelManager.cpp:72 o3cm@S: getToken, trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+uin = 1878464932, id = 7, sendPacket(cmd = trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access, data = 0a08676574546f6b656e12c609d6f7413e07dacaf5372b079a370e053a57ba6b568be9c59008d47fd9a2bb1ffb0d95fef7a66c5a9ea3363a125a44656b4ad1cff0ecdd2d934932b31e0ba9ac678c36ae0c8c9633cfd70dcfb98877c73dd8e48cb495367524e9a45f5f8e6a5aa60af162e4cbe062fdb3179c372ca7aee19d8195bb167cd2344cbe0eb79729aa60f92b7ece41813080288930598e080199a1519a96d4de7c35e8d0416cc0ddca7585d52152388a65eed1b1039599b7c2710fffc919c96a09d55543dc6d0a735eeca337d47facfd0ca6e68ca792ac19f6addb478bde2184ffb7f36c55b72d82488698310fefba985571ffff4d7b17163300db7dd8e2d1de8b6a8745712d20341538d86421b3e92fb40c6724a34a1e9ea6255371e1edc12f852b9e30fa48904bccfb387c7bb916f614288e9c6909bf927eb6e8d82440c0503159738e104239b8d425e05ef4b05df9f2e3b5a209e894c0a849db3c88ffee3402549f43b1477f8da220931ad9fc8eb5b2732f90a7500c3dbc8b5e9c437e3c1d59b74e5e425bdbe43f186956853cabdd37dfb6ea0438f558055416e07693f674eea28355ba7185ec3c6191e6dd70ff7fb03123b517f5fa4b86371e86680983453d8493b87b8d38bcc68d63705d3174b7db1d2f866ea045443a02b5fa835813c368c619c3e2f0e10743393f6b15695d1bf7e18aa6cc3eda3cfe8085d145f68ce5dfdfad724b85ecbffd2ae957ca4f4b16f353d8db9228bbce8acc4e412f6015083274ba3b4dfc60d58905c1ca66995351246c397371e75f959f6ec9000017e1e7fd7e22233a68afe169de180bbf4accf5cc7e3403ca4d8b3382a2b5b180b1b9cacac60232f4fbfc42a8a83f97f96e7ddb9b735f626e6bdbe660a4e7dd4225a83bb83392c80f1bd55addab25081641cde14a8277ac9e3356be3b8dc4e0abcbc84bec86c7c55be451be48f424884f44f450131550e48feeec677e4ba42c082cb95659cd2c1661845689ec1bc4b7c4c23c71d2938b59f1ac274cd3b6c58433af7dea3664a37888bdb9f002a4cfc78f6b325f8c7423b60c7a5d59eeba6753e230e77dc61986afbd94a1b147c9cb196edcd6182a86d48c3463e0f0f8d089653f3dfe47546d16c4f774f0d963f9d0869124e5f8884b211227826f9c6a9b8a89951c1f387056fb9eea91e9641807c3a9312ff2513eea2a1f3f3cea3fa848a8a34a31be8b1e3a70baa176c5c3ebdabedfd07df55f847bf49ae2c5ec9a9577becc8118290969855fb82ebfbd3a7a6f42b85598cad22fdab43ada405e726d129da0fe967f1e36df8be78b67dd9064ddf31d1b562e6794c4550ad6eecf5c51fc48cc82a96346e6524607b83dede83a17f6d0724cc276fefdd6300e3152e45c22be8a04d9b28e2933b238966b1d04ca9f707a2ebd911a85403e016baf80d6d9741cc12d4e35657d1dd134f0b0d9772298a0d9d4ff5c7029b1bec1787a02cdd69154280e4665ae647e2a7638304d59cb649e53a899a6c97f67c83ff360d307f0b04befb20bc594a91e83b94611d38c2bba9643698460b7579a210f20afa6343e20b4cd982efb2a6c34b6bdb2f29d200fc648b3ea064edd43eed9fd319e8e58080875c165fdd24833a3937321bdd9c308ea4b1432a2b64eb6e3b4f0ca2d0a1a2775a9bef32c6dee8fa2430d9db1a7133ff71cfbfe7f1d3c4b94a407b20fc39dda68ca080a70e632ed0526fc66d87cea15d2d3f1c926ecd11a205ebbbaa3a337a50798b72b7ceebdc5f8c56a3124ac7c2ff8d331fb8cbf57f328)
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375340141000000, tv_sec=1692375340, tv_nsec=141000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375340142000000, tv_sec=1692375340, tv_nsec=142000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2068566068500, tv_sec=2068, tv_nsec=566068500
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2068566766100, tv_sec=2068, tv_nsec=566766100
+FEBound.transform(7d7b0102000103f3c4f5c400022ab0fa0047cce91464030000000038383c3d00000000) => 188520af2d931e8dd72ab19403dd8c6d2efd3ab079581e951d951d2afbe3d1832ea62e
+[FEKit_]info: ChannelManager.cpp:97 origin cmd:getToken ,cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+[FEKit_]error: ChannelManager.cpp:100 [ChannelManager:OnReceive] success:1 cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access bcmd:getToken
+[FEKit_]info: device_token.h:286 response len :20
+[FEKit_]info: device_token.h:309 DeviceToken::saveToken ok! expireTime:1692459675
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:wtlogin.exchange_emp
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375410000000000, tv_sec=1692375410, tv_nsec=0
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375410002000000, tv_sec=1692375410, tv_nsec=2000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2138426288400, tv_sec=2138, tv_nsec=426288400
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2138427054000, tv_sec=2138, tv_nsec=427054000
+FEBound.transform(fe57010200010332deebae000007d040bf9efad0e38d1f000000003365356c00000000) => 993d20af2d931e51916124940c896cf3b19ca595d702bb951d951d2741e5a8832ea62e
+[FEKit_]info: device_info.h:538 538
+[FEKit_]info: device_info.h:540 540
+[FEKit_]info: device_info.h:542 542
+[FEKit_]info: device_token.h:247 begin pack
+[FEKit_]info: device_token.h:249 pack buff result len:1194
+[FEKit_]info: device_token.h:264 begin sendmessage : len :1194
+FEBound.transform(fffcdf1eda98168aef63a20ffa22c3598b39104a891031de48ffde9d5d1ae3d7) => 9112ed780c36b2436feb239f25d8359cd3db6e2e4aa5631a232dd461b42d55b6
+[FEKit_]error: ChannelManager.cpp:72 o3cm@S: getToken, trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+uin = 1878464932, id = 8, sendPacket(cmd = trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access, data = 0a08676574546f6b656e12c6090d58a95e9d2583dbf3a827cebbdfaca6ca284aa9c5a9593e8159d399010b0b7cc2e85d005cd3d0d50377b0bce48e1e92c370fbad9fa8741cf8aa9906b74435c15829cfb62cddec9eb642982f11b49278736e675dc29a96e509bd57dc7dc59d8e4dcd51073643c82f56086dfa87f44b93fb13e38edb27bd2250e141299a25a83e9ff14128ab5c3e4e51bdbdb0cf92a6ffb09407a87e7aeba3f00bf5afa8c20a9f2b4f8eb4036de8bd6594dfec354f5572d242f33d67807f325638b37435b67ed847fb583107d589bf492c4c864a4465d32a7184b3a1995f0e0eb083a4c8dce6728799209ea714c0f1d9ef02a167a1e867789d6120a4e122002bd45f08e555f4c0926389e19b10f565956ae1ba244e046ac4cea9e61308b10d5c8970de54804745b354b2db504d62e5bffe620118d3b49aba588f36d9cb4599b6009d674e1b0c1eb03daf5f85a91bafcbb8092575cb873946e3001462e208a5deb5f069180f7a78f00ba1a9746689558d577b0513ca1c7527abf553e63baa194ec224d3daec48c31c22cc89d47871e38bc5a3659d5c4326a19ec8b53872aaf49a2bc0e743281e0887e26cff15dabc8c71e29847988940b7884e329d848969dccc59a9393ea6a00fcb64a9ceaa38877b584650c220cdb2564f5daf64071a6aee63da8df0e0964dbe344bf8d1366edd61f5c9f9fe04286e28f1213557e6b6d64c7e95ddfa362da409c248caccf81104491c46d4b81aac5ff2eb53cfcc018c5f2a1ddce81cb8b1553d74bda9bb4099ee12517dc4ee772715d1c92abed5d44daddc902be2da70f5d2db49f0c3dee35ecbe2babef3c8a6512537978e6b9e72295e4020df64c630123cfa2668fe4ffd2054d503cb3b0683f477e250b2fb9331ed4a29d6a874b1a631fee1bb0fa5b58736001ab76a749842d3d7b2aa396e032564ad7bc9c0170e8ba54b90ab1e5286c2fe40a5821db057217899aa309828bbc6c01703edb9bb2112600639b0678c978fd7062c88fa69febae40f4ff1cee0fe2e88584b808347c2ed5e3d00efe7e6bbb0c4b6bc710bc129ff306057ac3f7f768e1bfc58f126f52a2f9a2a4773fefcff99e6162f7d432ca881cb27c4ae09180f4bdc45143798985b097288159b60eeb3498f0fb566df7c8ec25c54871ec0a81ff6907f06d04855e966b3ecb4bf19b1e29d8bcec3472228af983c4a65d5e715212f5492fdd90f052364b4f5b04659495be15d39580ff5c2053a28f23cccfa388aa1afb57cba844d65ea265a89fd7f3f26b12de5cd7497bb30dab9c995ca7e9354b2c6b595d6f7845b05530aa4922f32831f283342f50becbe2760ac7b9f55d585b1d1d2afa5d2243b804cb0de8181cb7dc540932eb4d3b6b3892b5dc1c4ffb426c85cd2bdd65846c09ea4adb7e90289d4b121f8aef0db8e52eb49c198bdcb03f82ac641b9b324830a1544fa701703362f6c2abd34f2a0832a321e74cfab1d49dea92094d6e5dc87dc52bb26dec6db401e7beed60c552434d0997262c7568b64111f9fcf5fee70081aa814e8b789c2f1ca0bd4ba3ea8b30abd720f17ad948b59b7488ab71f16a207badf291cdacaf687f480b12f5bb053797102553c97ba84c33e1c43721772000f9f81b355c6e6309f8b38c53a7d1c5a229fb621c88ad8a0053119efcab046f7992049a113b62826890e724521ef38058c8478c15eeef6cad3f249b2c556df876bec872c42872f0b67c83ff91a205ebbbaa3a337a50798b72b7ceebdc5f8c56a3124ac7c2ff8d331fb8cbf57f328)
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375410253000000, tv_sec=1692375410, tv_nsec=253000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375410255000000, tv_sec=1692375410, tv_nsec=255000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2138677813200, tv_sec=2138, tv_nsec=677813200
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2138678691500, tv_sec=2138, tv_nsec=678691500
+FEBound.transform(3da20102000103e2f4c5f40003e418170154096b0eb51e000000006441664800000000) => e80320af2d931e01b77ac194070224362d3921162b8eb1951d951d48c93ff4832ea62e
+[FEKit_]info: ChannelManager.cpp:97 origin cmd:getToken ,cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+[FEKit_]error: ChannelManager.cpp:100 [ChannelManager:OnReceive] success:1 cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access bcmd:getToken
+[FEKit_]info: device_token.h:286 response len :20
+[FEKit_]info: device_token.h:309 DeviceToken::saveToken ok! expireTime:1692459674
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:wtlogin.exchange_emp
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375574857000000, tv_sec=1692375574, tv_nsec=857000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375574858000000, tv_sec=1692375574, tv_nsec=858000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2303279401500, tv_sec=2303, tv_nsec=279401500
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2303280123600, tv_sec=2303, tv_nsec=280123600
+FEBound.transform(dd4f0102000103eac0c9c0000d1790438ef9c61faead67000000004525472c00000000) => 88f720af2d931e03dd76bd9404299cf2d91b34799b1275951d951dfc915918832ea62e
+[FEKit_]info: device_info.h:538 538
+[FEKit_]info: device_info.h:540 540
+[FEKit_]info: device_info.h:542 542
+[FEKit_]info: device_token.h:247 begin pack
+[FEKit_]info: device_token.h:249 pack buff result len:1194
+[FEKit_]info: device_token.h:264 begin sendmessage : len :1194
+FEBound.transform(7de932342a6b73b64c0a1ee50242b23d3f418d92293fa81c4b1edfffda3c5c26) => 187bc6d25c57deec2b93e43c03588dc4e1fe17cf5afa9cc928dcdb7f75e3b87b
+[FEKit_]error: ChannelManager.cpp:72 o3cm@S: getToken, trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+uin = 1878464932, id = 9, sendPacket(cmd = trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access, data = 0a08676574546f6b656e12c6097078bf798479b9ebb1b5615edb12850bb9dfb508c4db45eb400e5e999c0982a804ca462a3ae155a0b6d744563540da025e1e6fdf88d9e1281f6408e01790a77e59467768f7e114da0925b879c286b0432f33eafb823fa8ed2703f90625aef6ce30e0c2c75d3569984e67c8c0b76fb394ca2137c7b3927e422d803d91d32bafae6ea35afefef9efdb8eb672b365f3b321e48bdbd525935f51d298f685f1cd97e078ebbe2876c751b7d411a07bc64c1f34262cd30c8e619638c663ea4f02f91c7b3465de5c8362158a0eb36c1ae8894d57050ae9f3de3fdc751ca28c7448643cf73067e5b363769d19bf0ef7c78667c9cf2fd020c4fe5064d35114d7ae5515a20086595d8b13962d23ba8f810161c4f7620bca67eca01865641f496fcfc61daa87b044d3957081a717872be546230f82879b2d3be5e0793310e20c5b55d7caf9de11c3f15ec8541400fe426147a995c79dc3a1e68a51f48debca3460f3d7826fdff978f3379eb78ba24b79407e5a59f086f7c3bb0fe4196cad4f28216606e3918b793051101051b34702e3c92842d44c9a5c5eb3020731190f1ebba75c1c074bd1fb887f588fd81e8cfb2a725bcae530541ccd2e6112dad16f67adfe2b0cbad6e899abf18ffc07c2c193ca57e5ac7ac3a40e5158904937207f2d39313bf806bc46cb0cc91276c3f70d52d3dbc882458c591a7ab59ae0343e6bee14bc6aedce80ba11ac3c147279530f1814335f7a20f67d22864fe64accd8b6f826a2ec5953c10f0b45c28f1d012e800fa2c1702440c8039e46710da21df2baee2ec03a6555139e751e17781cf5688aa8825928ed00f2564f5556de2de467aaef5c90973f65654a9809df10273e40a2f0edf11d42fc32720eee709748d3a76796158ad2698db75fb58fbc9000c00ac739edbf0736998e579a3faa2a0d9f333dc65f07be067f740798cf545ab10fbe7f9584ee71ba5fa90254405ff12603a2462fbb29e1527ab46299db284b8939677596bfcf9df4afd2d75c9751a22886e24ea8e81406e75a297653f16c9fca9ad4b97720ca3c66b22e071b5364ecfd3149bf8b11a4e28dccecc5f5753846423b4e0ce445ad78610b4dea373826b4c4cb3477018bd58aacfb7d65ec701859506baf425c42f3f5376ac5824c47968750b03384f1ea9aca3c368ed05279e1b19604c070b359645c84ab00b82b0caad9323e2be23418a1b0c92fe7d30561f4a14c9b7d4dde226e32aba4a371158b29029ae13c396e2dcc4400f8f58c7691496e7e515f909159765fc27bb1401d7d3e1041a4c5e77c5848e3214927b51a67a686a99a70747a9e2b7611e5d6e069c24222abaff6780f1e29d914b5b444979a8c756e27ee76abc1610567ad7a2b3dc1bbcddcdacca5d5a9a3ffbc979874e6d53882a5eac87c09eb8e556e7b836f48486cc5c298974f4f4cfdbb0e9e4a9b89049dc7530e4739d16ad8034f311d23273dc1784a1cde0608172adf20a0e92a90b656fb2218738121c2f2e1a5cac486edb13cf2969199e4f306bd614a0a079897bc003a5ab3595dfb9f082b2a72c3fb79ca36239a8c512cace229d1e6c9943db92debd81a5d7305042787c29f8a63a229fd596c0c6c5c7df22a7b334071b753e38a4ec91fffffa614d340dc271f2903e386656e41e0b56b48f46adaa4971abe8456bb44a984149c66ff387cddc3937f7f21d7cbfebd966a098e85c8f328d15296600023b7fb1a205ebbbaa3a337a50798b72b7ceebdc5f8c56a3124ac7c2ff8d331fb8cbf57f328)
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375575073000000, tv_sec=1692375575, tv_nsec=73000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375575075000000, tv_sec=1692375575, tv_nsec=75000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2303498079900, tv_sec=2303, tv_nsec=498079900
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2303499128200, tv_sec=2303, tv_nsec=499128200
+FEBound.transform(ff570102000103e827e2d7000124f8b06c7a44411869fa0000000067696b6e00000000) => 913d20af2d931e0efa6ed09409d2c423a08ff2217850a4951d951d454037a9832ea62e
+[FEKit_]info: ChannelManager.cpp:97 origin cmd:getToken ,cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+[FEKit_]error: ChannelManager.cpp:100 [ChannelManager:OnReceive] success:1 cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access bcmd:getToken
+[FEKit_]info: device_token.h:286 response len :20
+[FEKit_]info: device_token.h:309 DeviceToken::saveToken ok! expireTime:1692459674
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:MessageSvc.PbSendMsg
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375582439000000, tv_sec=1692375582, tv_nsec=439000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375582440000000, tv_sec=1692375582, tv_nsec=440000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2310863561500, tv_sec=2310, tv_nsec=863561500
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2310864289800, tv_sec=2310, tv_nsec=864289800
+FEBound.transform(a9a40102000103f5ebae9b0006b6c00eda9226ae26efc6000000003d2e413300000000) => 760920af2d931e8268acf8940abf3c878293b4e855ea32951d951d219e5ad5832ea62e
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:MessageSvc.PbSendMsg
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375588929000000, tv_sec=1692375588, tv_nsec=929000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375588930000000, tv_sec=1692375588, tv_nsec=930000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2317366604500, tv_sec=2317, tv_nsec=366604500
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2317367674500, tv_sec=2317, tv_nsec=367674500
+FEBound.transform(a9200102000103eaf7d2e7000e30d0c6616db16ff045d9000000004071487200000000) => 766620af2d931e03bace40940ee46cdbadb100198d2ec8951d951df4e95e4d832ea62e
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:wtlogin.exchange_emp
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375751785000000, tv_sec=1692375751, tv_nsec=785000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375751787000000, tv_sec=1692375751, tv_nsec=787000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2480215675800, tv_sec=2480, tv_nsec=215675800
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2480216745700, tv_sec=2480, tv_nsec=216745700
+FEBound.transform(9cd80102000103e8340534000c023801548a1496c9c2c200000000383f3e4200000000) => c04420af2d931e0e579a31940d88d48e372f62cbfa7b3f951d951d2affe1fd832ea62e
+[FEKit_]info: device_info.h:538 538
+[FEKit_]info: device_info.h:540 540
+[FEKit_]info: device_info.h:542 542
+[FEKit_]info: device_token.h:247 begin pack
+[FEKit_]info: device_token.h:249 pack buff result len:1194
+[FEKit_]info: device_token.h:264 begin sendmessage : len :1194
+FEBound.transform(da6d91611f3bdf8af4eda1190a2647118224971b96bc306819bd3c044ad1e071) => 82b1d01173f7cb43b76826ed05dff63edc69df76b58d6d7ec0883598c51a5c1e
+[FEKit_]error: ChannelManager.cpp:72 o3cm@S: getToken, trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+uin = 1878464932, id = 10, sendPacket(cmd = trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access, data = 0a08676574546f6b656e12c6099c6083bab9a74308246e8c9a65c3c0c89a7646f0930e19e3a56f3d599ba39ed88a94af6f1cc5f8dcdb5aee6d8269f77ebc43510e66d35787bf962ea712f71c4318d883febf2fb0b2373d66f3a9b4f63853d957991063a71634a4e8f7fcb96ee9fe72b1cd26540ca461e6d5e35fd0bb1ef04493e942f330182b655127eb7bb52ea875d2f5642bee80d2a3eeb0bd663c4df68a7148eeadaace951290df566646f5578f5c86b986c45dea2447a007d91f40313bba8b44fe5fbf2224204507f078c7b62cf005db119ed5923f1ce3d8a20ba9450221f9ce4e8b53d8a869ba7047dc357a713fb21f88ecdbacef012f545b61a4ba9aa52431060b6a26ec663f65bd67efa6eb28b629c034d9cf992e61a8884b40a34c46ca115ad835c34bd6a3d840b0afbfd15ec3a6adefe7368d5dcca5b7151732dfb6f18765667e0cf45f63a6fd2ee2b30682d0f5569e37c72aa554c1e81b3df7726d6a6dc5593dc06fe1aaa3845cc8695d7b64b41964a59a2dbc6a65a31d3add032f3d6841101e3924421be467c8a451cef654a56f050d32c4765706867d49d9077efba2edc001231213734f29e8297c24d675b380e4f775f22491a9a38f52c6cfd8b9f8dc9cd9b9bfe12521d88cfa640bfd4c64f334044f65d87c8443b862271cfe3629e2218a01755bbaa908ab9374ff06054a95203ec023c03f67430e59932a70755b704a26cb5834e6db260118a69321d6ddbf4b32112c12d57967f9b216951f1c486dac2fa23330a816525d95ec20ce8e8beb1492859bbfaeaa44e61363954376ccefe62e8e6b30f451146402c1fd241c8c125faabf53a246fefa08448cff93b3d62bbb5193b73f0af61c6609d1aafa60540805b832d551f1c2dba7c11bbadd4195daa76f8b3eee60149ea31c730f0718f57bec58b6dc47913df84be4a91aec2942ea49a7989f8b2c968a9dc847d6c7608fcc1ba0e854e3312f8ac6c580f1156fd6af86861ed22ab42dd66d5279d4ade3e11fbbbc722a5e59b467d3de7b14d0468556ca12d115a91d3f894ec5d5c50dcde0d00cabc48ac5c94ad0be379f65bbb8045faecf3a65c700cd43a2dd5055b3aaf4162fe673f1aa7fa46ae2000ea3caa31ccc0d511f48b41a992a7836355c6e61148a6767708bca3d5ff532e7cbe3957bf5404eaa6d15c11551cb6d40f84d1aed9b1f6e623f722ee9b442d0f97e14e6120cc839757665ae04e63ebc1053b1a8bca2a2b4fef7761eb736192c501c30e38dd59ae2c67247f82faa980e052069b1b00e7ab04487428881a3c0fae3fac4e0293edee42c3942b71a603276f8fc7ea5fe9963c364473611f137aa55490c02a802b92375873f28c3e63230a44b948dfb9d757c788838db635776fac6d732705de52db3b0075e31bb28a4d1abcc4a73bf5342a1460a3ccbfe93bbf36c9910d64b5c45b43933e28e81da7a640a6290d2889ce41205bd9b9de1fef9a51a0abe7669e4d4d6f8c1e7a1b33f167db98986a408e185ce6f59b840d31808268fbd315eb6750eee62664214ee90f32dc9cc55fa6beaebe6387a6f71b45be28d0056f42e03abe1189fb9616b4e70bd4963ba684f42a3c6f4dd36b3fd397b642d4c3e7a4fb614e47211b1120ce4c886f82530f1e327ba633f50df21a09c3b97572dc62f54cee49ab058e7e4a6dd031f3bf8aaf4b479c2c78c1eac0dcdcd268c6ceb301bb27e3db2527e0df67cec941bbd2b072494197216e31a205ebbbaa3a337a50798b72b7ceebdc5f8c56a3124ac7c2ff8d331fb8cbf57f328)
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375752065000000, tv_sec=1692375752, tv_nsec=65000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375752067000000, tv_sec=1692375752, tv_nsec=67000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2480493435200, tv_sec=2480, tv_nsec=493435200
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2480494499400, tv_sec=2480, tv_nsec=494499400
+FEBound.transform(b627010200010337251425000105b846b906f3507621e6000000003d23452400000000) => ba6d20af2d931e58f4d78f94098584fbb6a8a345c56302951d951d21975517832ea62e
+[FEKit_]info: ChannelManager.cpp:97 origin cmd:getToken ,cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+[FEKit_]error: ChannelManager.cpp:100 [ChannelManager:OnReceive] success:1 cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access bcmd:getToken
+[FEKit_]info: device_token.h:286 response len :20
+[FEKit_]info: device_token.h:309 DeviceToken::saveToken ok! expireTime:1692459674
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:MessageSvc.PbSendMsg
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375759964000000, tv_sec=1692375759, tv_nsec=964000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375759965000000, tv_sec=1692375759, tv_nsec=965000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2488388875000, tv_sec=2488, tv_nsec=388875000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2488389584100, tv_sec=2488, tv_nsec=389584100
+FEBound.transform(1e7b0102000103f7c9c0c9000eb988450ec2d7283297c600000000704d725400000000) => 598520af2d931e88d075bc940eb074f129c3ef0da63932951d951db4c478b7832ea62e
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:wtlogin.exchange_emp
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375818225000000, tv_sec=1692375818, tv_nsec=225000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375818226000000, tv_sec=1692375818, tv_nsec=226000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2546660331700, tv_sec=2546, tv_nsec=660331700
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2546661386800, tv_sec=2546, tv_nsec=661386800
+FEBound.transform(de210102000103fdfecbce000372d0161a43d5c12f8538000000002b4e315100000000) => 896e20af2d931e8fb171b49407786c3b52f0ec81530e6c951d951dd6ceeabb832ea62e
+[FEKit_]info: device_info.h:538 538
+[FEKit_]info: device_info.h:540 540
+[FEKit_]info: device_info.h:542 542
+[FEKit_]info: device_token.h:247 begin pack
+[FEKit_]info: device_token.h:249 pack buff result len:1194
+[FEKit_]info: device_token.h:264 begin sendmessage : len :1194
+FEBound.transform(39961e5b716ab6f6217ee9f47b4ea4a889dfc05606feab7819f2d61b437a97e2) => e6986b46c254e28cf50c4c78e251e74fd6473e4b254c9adec02ed9e6c77d96a8
+[FEKit_]error: ChannelManager.cpp:72 o3cm@S: getToken, trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+uin = 1878464932, id = 11, sendPacket(cmd = trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access, data = 0a08676574546f6b656e12c609e38628c5e26d4cc7ac29d7c3d4cf4344aba8f955c3b3d235237a6106e06dc1ed703c867442daa21baf5fc860d63941377bc27b52e000fa5fe46f68f473132440dcf356b9f2ab4f6f8d992ee429b8f82a1f361c7d86b6b641ee087a53b8af3d0df4da48694e4a8a711a088200ec0f30e2891a1f20a2c47a6ad0c70caf1d5d82faa21f85595f3dd2c5ff483fbae3f91689451d343e0a8ea4b485e05cab2559df3989dd40e4410a9a9338d5e79c88440fc2ffa8b28193432809c6bffe5eaa6e6846b7084d7abcb3402cb8c425efd202321b173b697446426b6aca311f5c97df9b9a0881b1c13761407243eafeaa393322af3fc6fca5cea0d700d539c71bc575ea728c426f7f905ca33aa44773c3795a6e7808d289c7d3f057189d3fd8bbd7196d854bcc80aaf70077bc078452cac9e5ce33dceb6b4b9188f3ac7cda9f3b7b699f4e6cba554f26d1cd6e39bf6dc749c430bc021d57ee1b6093dac860387715ccf8b0635dac9bc84804a23bf49681147f3ff56fd8ef27dac9d1aef90616fd2b1e86ec2015b87b5b8993fb80ea128a4f738dc65989e627bfbaf635dca16a2e10aea02c9faf64fbc92f262396bca143ab58d40292167ed751c8939bcf6470b3cf395fc5577e1c65fe0678f26fda158615f27a4b7c6c8166730ad8c55c23d542106b939ce40ce2bac2defa2a9c94cedf2082a0d6ad42266474bf53a326ae3a9d8c027c73dbbf1a931c346cf6ebcb1a1dbd1db94853c2234ddb680798a388497df1196a2f148697db1228881eddc6cae9375fca5a3098699ee50364cd7647877fe486d337ba31ed6b0bba7e9dff8ee395b84d9c037b17dd6513d5d662d2990b06a726f824278970c3090ec5acc4ded3388a2f48ce3b67d0304cfb1e672b7ca8127196b4bd029ec558849e24301c5eafc3c2cdfed1561f59ad2f524dbe805a6e8816697eb41a7e47197480885493f2d3875bebb03d1261e0cd21bd214c0b68ac408113bfaad4544be1563229617b43d97c36b591294667d2b291a6e1261c22f1a6601b136511eab90e972f3848db4730b75b8df6fd3fdcfd2063c53a2aeb6c28f836fbe87c7ce9062661c987fe02d5bf95b90ce3cef138303fe8c2a0183318cadcc43a6886ee82c142630277dbc780fc1c4f6e9f9ea7465d641162ef9e7c6aec90c8555e8b5136da31a3b5d2226bfbde50380542c2e28fb98b42de813684bc704a164447f84c48a6c67a7d970f311566f9dd6bf2bb70f936220f3709cf4e5e91f9d0564761917be9037297473f79c0470e035a8475c20a46cfcac9a1fa2f77e98decfa1cafb12b7a3c2767acce4453f13dccae25b3e7ced4cb56d2ab81ad8e33c00c62182573c01418dbddca2465c647129ab61dfa15d6f954165c480b3a826db6970bc8d14a489199487e3db809f8fcf1b6a9ec821ad06d19eeb4d9066c801fdd96d5b3bea5906fd86026677e78824bc7d36e32845c0df1a5f4416f9ad41001d5a34d2bb7a4af71b663f06e15dadb198b892869f9d9d9d4675aa7ac9ea0d891dd8f7ed988586362ce85d23ad299c4d6a91ee4b30e6dd98b6422a052766b3d5976a020eae9df3462ea528d890bc8f35b17b6d5143397db78a1e6fd38615a1042d0faaeb35e15ff024939ced209d82a6789b90930d97b641aab5fc6c07df0d83a6e5b03d33db6119079cef87ef6988f43026ed0712eaa5c40ee9c38f2e249467c362e1935950aeddce81cd21a205ebbbaa3a337a50798b72b7ceebdc5f8c56a3124ac7c2ff8d331fb8cbf57f328)
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375818474000000, tv_sec=1692375818, tv_nsec=474000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375818475000000, tv_sec=1692375818, tv_nsec=475000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2546897984700, tv_sec=2546, tv_nsec=897984700
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2546898683700, tv_sec=2546, tv_nsec=898683700
+FEBound.transform(7d6e0102000103f3e7a29700073f7810b4cc851bd06910000000004231463600000000) => 18bc20af2d931e8d6aaef09406eb4433b7c21c760d50bd951d951dfef95fdf832ea62e
+[FEKit_]info: ChannelManager.cpp:97 origin cmd:getToken ,cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+[FEKit_]error: ChannelManager.cpp:100 [ChannelManager:OnReceive] success:1 cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access bcmd:getToken
+[FEKit_]info: device_token.h:286 response len :20
+[FEKit_]info: device_token.h:309 DeviceToken::saveToken ok! expireTime:1692459674
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:MessageSvc.PbSendMsg
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375825322000000, tv_sec=1692375825, tv_nsec=322000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692375825323000000, tv_sec=1692375825, tv_nsec=323000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2553760944400, tv_sec=2553, tv_nsec=760944400
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2553762015500, tv_sec=2553, tv_nsec=762015500
+FEBound.transform(fef60102000103c327e2d70004edb8d4e48413ce334c4f0000000032363a3700000000) => 991820af2d931e6dfa6ed094080c84b047296388a72dfb951d951d2efaedd6832ea62e
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:wtlogin.exchange_emp
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692376046299000000, tv_sec=1692376046, tv_nsec=299000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692376046301000000, tv_sec=1692376046, tv_nsec=301000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2774731977800, tv_sec=2774, tv_nsec=731977800
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2774733024700, tv_sec=2774, tv_nsec=733024700
+FEBound.transform(f5c3010200010325deebae000497c8b924038db3c9857f0000000046314e3200000000) => 9fc020af2d931ea2916124940849342c07a01767fa0edb951d951df2f951dd832ea62e
+[FEKit_]info: device_info.h:538 538
+[FEKit_]info: device_info.h:540 540
+[FEKit_]info: device_info.h:542 542
+[FEKit_]info: device_token.h:247 begin pack
+[FEKit_]info: device_token.h:249 pack buff result len:1194
+[FEKit_]info: device_token.h:264 begin sendmessage : len :1194
+FEBound.transform(2c2ad44842ceda50026a752bb09f35132d02cfc3a41fafde0c077808dcfea33c) => 006fe22de67cc42519e37fd68c4bd03208a33d8799aa9b1a1b99779a7d91e5c9
+[FEKit_]error: ChannelManager.cpp:72 o3cm@S: getToken, trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+uin = 1878464932, id = 12, sendPacket(cmd = trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access, data = 0a08676574546f6b656e12c60924353edd4263e631ed4b8aed4d12fd5810614da0739496ec6af47e4f77ef3905ba35106be1abe93dc0afe51dea7329f08c3c9190bca7c07158be1fb21c518bfca4db68adca193975c0454e2e91fcf8c43b5a8697d36c4d869a02572fbabdd530c69d4a3d6a2fbcbcf4aa9c43600e055c67adbc15d5ea0bf7a267bcdcdad44e6d91be50b643d872e33d9c2ba5602d47e187a6c74960b0b1c30b2eaf8ad2610160333d8ccf61c947cac3e912c106b27271c3d083792944d724347655cc4e721a365676283d8e50470ee03b91e0096a390bbdc43e457df7485bf9d0664a8a5c9237a143c24fdcd90c9e2e4cc685a3119876f7c2a1923111175995c91f76200a68a07c29d32b10d5358a1185d5b686deb9457d2d0a2be8657642df29938adfe6c542a07c307d708aaa92110ce8df04416350c427775fcf5d60c2fe0752e32810bc5f4e98ef54b933a788ae4c51439a43918b7d3a4993f6dcf9218803706081f96f63c5d5c1259772bba7547dcbd4bf384b77121efdab4a5f4b190aa37efd872a0b39563c8bf4c1c10c630684155a808f2074b5bc2c5be9df4ce5bab4e76f33a99017333541fc751a7daca767c86b19f0596abead689485fde0289bf2016a9c444c7473492f342a23c79f7ffc716d1a29aa531b3d599023d8a89cf3c93c14e0de81b061fdb5820324eb37e94e5c63fff8d27d82504b4c4d33fb7873cbd34a47935114437062bcdd493e499682f7ab2554f7e912baeadcc1103b41c4993f90b2f6694fcfbfb18b8943000edf8cbeb55719af61dbc6b96c6275cd74e397b05e437e19aa7e5ae8e5201c1708c8ff379fbce37f2dcd3d5030ed4f55e13efcb5f0f715854e4d575b644caeed1d5b9181906558c82b8c3bf98307d31b925896e9e77d553345b9ecc949b7931f1e2ca9bc26e6cfc715bd1d7f3a95bcc00e11101530507cc169518e62e3ac6a4f640945623a738b7b21511b73dc6d31390caa057a4587a521da6c6fbc897e0276508326827999c9b1cbc3b63d8d62710264ce2f1ff1fa5f23c0b19ec8f9f08780bbf04eaa9f710cce71b8a9039fccaa132f79a51544d253de115a8992325be437cbb233404e09fd9ec3aef5b22b237656b2a55350d435bcec767e7a593b20f8184c049e87be21ead9098f0a70fc3bd6ae0a80c7de98349886b4836f31540f0726991a803c01d6f2aae72d84076955f4fb3b5612040a99c39ffbfee0ab169d89c6d283e94fd4b676648b7ac49a64605821641646b6ce19fcd1bbac9465603f22331d1f73769894b57ba61432b132a88fd747a2f911d0c37fb7c31e6f07a3211f9cf7d68bcc3ab69065cf3f5a028e47df74e99ea04dcf4ffd04bc3d1c50f686347738e11e691737083e4e80f1065d8950e0e3bbf7d595854c385985e0f4bfd93bf00494b26b34fbe291f6c11949d370d0bc41d58e1813f5d51ce85831f0220132baac1597d825333bbabb954063074a736e3690b1dd6d27670b22ba15f29af19181bd9dc214cf8b8696e96e290767d30637702a9d0f968ad4fb5d2e6ac214c3f3189847c734fabff6c5d7f932e65e6e66aec2fe314ecc1239b84d3951afe5c5628e85c9abd8a6ec826a184191698b9ad60447f8794a03722aed6da45d2b07c430d3f6a739bc1868cacb79872d5992b94bb00db97d89de2acb5c796c1bf4b10097ff13e9a2954996d668b17b1445a45d62c1c51ae2332e521fe5950c0fa79cad921a205ebbbaa3a337a50798b72b7ceebdc5f8c56a3124ac7c2ff8d331fb8cbf57f328)
+[FEKit_]info: qq_sign.h:132 [GetSign] cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692376046580000000, tv_sec=1692376046, tv_nsec=580000000
+clock_gettime clk_id=0, tp=unidbg@0xbfffd308, offset=1692376046582000000, tv_sec=1692376046, tv_nsec=582000000
+clock_gettime clk_id=1, tp=unidbg@0xbfffd308, offset=2775004121800, tv_sec=2775, tv_nsec=4121800
+clock_gettime clk_id=1, tp=unidbg@0xbfffd2f8, offset=2775004861000, tv_sec=2775, tv_nsec=4861000
+FEBound.transform(ff440102000103ebe5d4e50008e170106ddbb491a708c5000000004669487000000000) => 91f920af2d931e0b64c74f940b0a4c33a84502c1949630951d951df2405e4c832ea62e
+[FEKit_]info: ChannelManager.cpp:97 origin cmd:getToken ,cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access
+[FEKit_]error: ChannelManager.cpp:100 [ChannelManager:OnReceive] success:1 cmd:trpc.o3.ecdh_access.EcdhAccess.SsoSecureA2Access bcmd:getToken
+[FEKit_]info: device_token.h:286 response len :20
+[FEKit_]info: device_token.h:309 DeviceToken::saveToken ok! expireTime:1692459674

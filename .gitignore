@@ -1,0 +1,10 @@
+node_modules
+.vscode
+data
+lib/**/*.d.ts
+config.yaml
+lib/**/*.js
+!src/**/protobuf.min.d.ts
+!src/**/protobuf.min.js
+package-lock.json
+pnpm-lock.yaml

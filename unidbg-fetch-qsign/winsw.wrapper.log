@@ -1,0 +1,25 @@
+2023-08-18 23:38:38,819 DEBUG - Starting WinSW in console mode
+2023-08-18 23:38:38,827 INFO  - Installing service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-18 23:38:38,833 INFO  - Service 'unidbg-fetch-qsign (unidbg-fetch-qsign)' was installed successfully.
+2023-08-18 23:40:06,690 DEBUG - Starting WinSW in console mode
+2023-08-18 23:40:07,215 DEBUG - Starting WinSW in console mode
+2023-08-18 23:40:07,288 INFO  - Starting service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-18 23:40:07,605 DEBUG - Starting WinSW in service mode
+2023-08-18 23:40:07,627 INFO  - Service 'unidbg-fetch-qsign (unidbg-fetch-qsign)' started successfully.
+2023-08-18 23:40:07,707 INFO  - Starting bin\unidbg-fetch-qsign.bat --basePath=txlib\8.9.63
+2023-08-18 23:40:07,726 INFO  - Started process 7712
+2023-08-18 23:40:07,735 DEBUG - Forwarding logs of the process System.Diagnostics.Process (cmd) to WinSW.SizeBasedRollingLogAppender
+2023-08-18 23:40:46,027 DEBUG - Starting WinSW in console mode
+2023-08-18 23:40:46,534 DEBUG - Starting WinSW in console mode
+2023-08-18 23:40:46,557 INFO  - Uninstalling service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-18 23:40:46,560 WARN  - Service 'unidbg-fetch-qsign (unidbg-fetch-qsign)' is started. It may be impossible to uninstall it.
+2023-08-18 23:40:46,561 INFO  - Service 'unidbg-fetch-qsign (unidbg-fetch-qsign)' was uninstalled successfully.
+2023-08-18 23:40:56,393 DEBUG - Starting WinSW in console mode
+2023-08-18 23:40:56,904 DEBUG - Starting WinSW in console mode
+2023-08-18 23:40:56,928 INFO  - Installing service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-18 23:40:56,931 ERROR - A service with ID 'unidbg-fetch-qsign' already exists.
+2023-08-18 23:40:56,932 FATAL - Failed to install the service. 指定的服务已存在。
+2023-08-18 23:41:02,078 DEBUG - Starting WinSW in console mode
+2023-08-18 23:41:02,620 DEBUG - Starting WinSW in console mode
+2023-08-18 23:41:02,645 INFO  - Starting service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-18 23:41:02,657 FATAL - Cannot start service 'unidbg-fetch-qsign' on computer '.'.

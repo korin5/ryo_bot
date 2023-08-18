@@ -1,0 +1,10 @@
+bot:
+    account : 123123123
+    password : "Abc123123"
+
+client_conf:
+    platform: 1
+    sign_api_addr : "http://127.0.0.1:2333/signkey=114514"
+
+plugins:
+    - hello_world
