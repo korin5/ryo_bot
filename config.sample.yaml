@@ -1,10 +1,21 @@
 bot:
+    # bot 账号，密码
     account : 123123123
     password : "Abc123123"
 
 client_conf:
+    # 基础配置项，可以不修改，更多配置请查看 client.ts 文件
+
+    # 日志等级，默认 info (可选 "trace" | "debug" | "info" | "warn" | "error" | "fatal" | "mark" | "off")
+    log_level: info
+    
+    # 登录设备，默认 安卓手机 (1-6分别对应安卓手机，安卓平板，安卓手表，MacOS，iPad，Tim)
     platform: 1
-    sign_api_addr : "http://127.0.0.1:2333/signkey=114514"
+    
+    # 签名服务器地址，也就是 unidbg-fetch-qsign\txlib\QQ版本\config.json 中的地址，未配置可能会导致登录失败和无法收发消息
+    sign_api_addr : "http://127.0.0.1:2333/sign?key=114514"
+
 
 plugins:
-    - hello_world
+    # 要加载的插件
+    - Hello
