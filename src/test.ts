@@ -40,6 +40,7 @@ export {bot}
 
 for (let i in config.plugins) {
     require(`../plugins/${config.plugins[i]}`)
+    // require(`../plugins/${config.plugins[i]}/${config.plugins[i]}`)
 }
 
 process.on("unhandledRejection", (reason, promise) => {
