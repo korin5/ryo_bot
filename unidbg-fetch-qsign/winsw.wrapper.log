@@ -23,3 +23,46 @@
 2023-08-18 23:41:02,620 DEBUG - Starting WinSW in console mode
 2023-08-18 23:41:02,645 INFO  - Starting service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
 2023-08-18 23:41:02,657 FATAL - Cannot start service 'unidbg-fetch-qsign' on computer '.'.
+2023-08-21 09:14:21,933 DEBUG - Starting WinSW in console mode
+2023-08-21 09:14:23,699 DEBUG - Starting WinSW in console mode
+2023-08-21 09:14:23,741 INFO  - Installing service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-21 09:14:23,751 ERROR - A service with ID 'unidbg-fetch-qsign' already exists.
+2023-08-21 09:14:23,755 FATAL - Failed to install the service. 指定的服务已存在。
+2023-08-21 09:14:30,150 DEBUG - Starting WinSW in console mode
+2023-08-21 09:14:31,856 DEBUG - Starting WinSW in console mode
+2023-08-21 09:14:31,900 INFO  - Starting service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-21 09:14:31,925 FATAL - Cannot start service 'unidbg-fetch-qsign' on computer '.'.
+2023-08-21 09:31:27,699 DEBUG - Starting WinSW in console mode
+2023-08-21 09:31:29,512 DEBUG - Starting WinSW in console mode
+2023-08-21 09:31:29,552 INFO  - Installing service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-21 09:31:29,560 ERROR - A service with ID 'unidbg-fetch-qsign' already exists.
+2023-08-21 09:31:29,564 FATAL - Failed to install the service. 指定的服务已存在。
+2023-08-21 09:31:34,869 DEBUG - Starting WinSW in console mode
+2023-08-21 09:31:36,432 DEBUG - Starting WinSW in console mode
+2023-08-21 09:31:36,476 INFO  - Starting service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-21 09:31:36,500 FATAL - Cannot start service 'unidbg-fetch-qsign' on computer '.'.
+2023-08-21 09:32:02,302 DEBUG - Starting WinSW in console mode
+2023-08-21 09:32:03,877 DEBUG - Starting WinSW in console mode
+2023-08-21 09:32:03,919 INFO  - Starting service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-21 09:32:03,940 FATAL - Cannot start service 'unidbg-fetch-qsign' on computer '.'.
+2023-08-21 09:33:52,316 DEBUG - Starting WinSW in console mode
+2023-08-21 09:33:53,885 DEBUG - Starting WinSW in console mode
+2023-08-21 09:33:53,926 INFO  - Installing service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-21 09:33:53,932 ERROR - A service with ID 'unidbg-fetch-qsign' already exists.
+2023-08-21 09:33:53,935 FATAL - Failed to install the service. 指定的服务已存在。
+2023-08-21 09:33:59,014 DEBUG - Starting WinSW in console mode
+2023-08-21 09:34:00,569 DEBUG - Starting WinSW in console mode
+2023-08-21 09:34:00,608 INFO  - Uninstalling service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-21 09:34:00,615 INFO  - Service 'unidbg-fetch-qsign (unidbg-fetch-qsign)' was uninstalled successfully.
+2023-08-21 09:34:10,506 DEBUG - Starting WinSW in console mode
+2023-08-21 09:34:12,061 DEBUG - Starting WinSW in console mode
+2023-08-21 09:34:12,099 INFO  - Installing service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-21 09:34:12,121 INFO  - Service 'unidbg-fetch-qsign (unidbg-fetch-qsign)' was installed successfully.
+2023-08-21 09:34:18,162 DEBUG - Starting WinSW in console mode
+2023-08-21 09:34:19,706 DEBUG - Starting WinSW in console mode
+2023-08-21 09:34:19,749 INFO  - Starting service 'unidbg-fetch-qsign (unidbg-fetch-qsign)'...
+2023-08-21 09:34:20,264 DEBUG - Starting WinSW in service mode
+2023-08-21 09:34:20,300 INFO  - Service 'unidbg-fetch-qsign (unidbg-fetch-qsign)' started successfully.
+2023-08-21 09:34:20,426 INFO  - Starting bin\unidbg-fetch-qsign.bat --basePath=txlib\8.9.63
+2023-08-21 09:34:20,457 INFO  - Started process 8972
+2023-08-21 09:34:20,474 DEBUG - Forwarding logs of the process System.Diagnostics.Process (cmd) to WinSW.SizeBasedRollingLogAppender
