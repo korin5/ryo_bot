@@ -59,9 +59,8 @@ async function searchFile(filename: string, ex_name: string, group_id: number, s
 
         //判断关键词
         filestats.forEach((filestat) => {
-            if (compare(filestat.name, fullname)) {
-                result.push(filestat.fid)
-            }
+            if (compare(filestat.name, fullname)) result.push(filestat.fid);
+            else ;      //匹配失败，查找关键词别名列表
         })
 
         if (result.length > 0) resolve(result); else resolve(["-1"]);
