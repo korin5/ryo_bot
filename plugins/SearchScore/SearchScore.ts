@@ -56,14 +56,40 @@ async function searchFile(filename: string, ex_name: string, group_id: number, s
         if (search_range === "all") filestats = filestats_inDir.concat(filestats_inRoot)
         if (search_range === "inDir") filestats = filestats_inDir
         if (search_range === "inRoot") filestats = filestats_inRoot
-        
+
         //判断关键词
-        filestats.forEach((filestat)=>{
-            if (filestat.name.toLowerCase() === fullname.toLowerCase()) {            //忽略大小写匹配
+        filestats.forEach((filestat) => {
+            if (compare(filestat.name, fullname)) {
                 result.push(filestat.fid)
             }
         })
 
         if (result.length > 0) resolve(result); else resolve(["-1"]);
     });
+}
+
+/**
+ * 比较两个字符串是否匹配（参数不分先后顺序）
+ * @param word1 字符串1
+ * @param word2 字符串2
+ */
+function compare(word1: string, word2: string): boolean {
+
+    word1 = word1.toLowerCase()     //去大小写
+    word2 = word2.toLowerCase()
+
+    if(word1.includes(' ') || word2.includes(' ')){   //去空格
+        word1 = word1.replace(/\s/g, '')
+        word2 = word2.replace(/\s/g, '')
+    }
+    
+    if (word1.includes('(') || word1.includes('（') || word2.includes('(') || word2.includes('（')) {   //去括号
+        word1 = word1.replace(/\([^)]*\)/g, '')
+        word2 = word2.replace(/\([^)]*\)/g, '')
+        word1 = word1.replace(/\（[^）]*\）/g, '')
+        word2 = word2.replace(/\（[^）]*\）/g, '')
+    }
+    
+    if (word1 === word2) return true;
+    else return false
 }
