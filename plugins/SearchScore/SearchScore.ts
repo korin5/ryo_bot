@@ -1,6 +1,6 @@
-import { bot } from '../src/test'
-import { GfsFileStat, GfsDirStat } from '../src/gfs'
-import { Group } from '../src/group'
+import { bot } from '../../src/test'
+import { GfsFileStat, GfsDirStat } from '../../src/gfs'
+import { Group } from '../../src/group'
 
 const ex_name: string = "pdf"
 

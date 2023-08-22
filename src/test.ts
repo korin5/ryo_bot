@@ -1,11 +1,11 @@
-import {createClient} from '../src/client'
+import { createClient } from '../src/client'
 import fs from 'fs'
 import YAML from 'yaml'
 
 const file = fs.readFileSync('config.yaml', 'utf8')
 const config = YAML.parse(file)
 
-const bot=createClient(config.client_conf)
+const bot = createClient(config.client_conf)
 bot.on('system.login.slider', (e) => {
     console.log('输入滑块地址获取的ticket后继续。\n滑块地址:    ' + e.url)
     process.stdin.once('data', (data) => {
@@ -35,14 +35,13 @@ bot.on('system.login.device', (e) => {
         }
     })
 })
-bot.login(config.bot.account,config.bot.password)
-export {bot}
+bot.login(config.bot.account, config.bot.password)
+export { bot }
 
 for (let i in config.plugins) {
-    require(`../plugins/${config.plugins[i]}`)
-    // require(`../plugins/${config.plugins[i]}/${config.plugins[i]}`)
+    require(`../plugins/${config.plugins[i]}/${config.plugins[i]}`)
 }
 
 process.on("unhandledRejection", (reason, promise) => {
-	console.log('Unhandled Rejection at:', promise, 'reason:', reason)
+    console.log('Unhandled Rejection at:', promise, 'reason:', reason)
 })
