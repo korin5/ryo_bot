@@ -8,3 +8,5 @@ lib/**/*.js
 !src/**/protobuf.min.js
 package-lock.json
 pnpm-lock.yaml
+unidbg-fetch-qsign/*.log
+unidbg-fetch-qsign/txlib/**/.system_android_l2
