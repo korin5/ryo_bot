@@ -7,12 +7,12 @@ const ex_name: string = "pdf"
 bot.on("message.group", async function (msg) {
     // if (msg.member.uid !== admin.account) { return }     // TODO 中间件:命令权限
     if (msg.raw_message.indexOf("/找") !== -1) {
-        var filename:string = msg.raw_message.replace('/找', '').trim()
+        let filename:string = msg.raw_message.replace('/找', '').trim()
         // console.log(`开始找${filename}的谱子`)
         for (let g of bot.gl.values()) {
             if (g?.group_id === 1090340791) continue //TODO 中间件:黑名单
-            var group: Group = await bot.pickGroup(g?.group_id)
-            var fid: string[] = await searchFile(filename, ex_name, g?.group_id)  //TODO 插件配置文件:搜索范围
+            let group: Group = await bot.pickGroup(g?.group_id)
+            let fid: string[] = await searchFile(filename, ex_name, g?.group_id)  //TODO 插件配置文件:搜索范围
             if (fid[0] !== "-1") {
                 let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[0])    //TODO 插件配置文件:用户选择查看第几个文件
                 msg.group.fs.forward(filestat as GfsFileStat)
@@ -40,6 +40,7 @@ async function searchFile(filename: string, ex_name: string, group_id: number, s
         let result_inDir: string[] = []
         let promises: Promise<(GfsFileStat | GfsDirStat)[]>[] = [];
         let result_all: string[] = []
+        let fullname:string = `${filename}.${ex_name}`
 
         for (let filestat of group_files) {
             if (filestat.is_dir) promises.push(group.fs.dir(filestat.fid));
@@ -48,7 +49,8 @@ async function searchFile(filename: string, ex_name: string, group_id: number, s
         let filestats_dir = await Promise.all(promises);        //value [Dir1_filestats, Dir2_filestats, Dir3_filestats, ...]
         filestats_dir.forEach((filestats) => {
             filestats.forEach((filestat) => {
-                if (filestat.name === `${filename}.${ex_name}`) result_inDir.push((filestat as GfsFileStat).fid)
+                //判断关键词
+                if (filestat.name.toLowerCase() === fullname.toLowerCase()) result_inDir.push((filestat as GfsFileStat).fid)
             })
         })
         result_all = result_inDir
