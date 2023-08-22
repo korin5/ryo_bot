@@ -7,7 +7,7 @@ const ex_name: string = "pdf"
 bot.on("message.group", async function (msg) {
     // if (msg.member.uid !== admin.account) { return }     // TODO 中间件:命令权限
     if (msg.raw_message.indexOf("/找") !== -1) {
-        let filename:string = msg.raw_message.replace('/找', '').trim()
+        let filename: string = msg.raw_message.replace('/找', '').trim()
         // console.log(`开始找${filename}的谱子`)
         for (let g of bot.gl.values()) {
             if (g?.group_id === 1090340791) continue //TODO 中间件:黑名单
@@ -32,31 +32,38 @@ bot.on("message.group", async function (msg) {
  * @param search_range `all` 为全部; `inDir` 在文件夹内搜索; `inRoot` 在根目录搜索
  * @returns 所有结果文件的fid的集合，如果没有则返回["-1"]
 */
-async function searchFile(filename: string, ex_name: string, group_id: number, search_range:string="all"): Promise<string[]> {
+async function searchFile(filename: string, ex_name: string, group_id: number, search_range: string = "all"): Promise<string[]> {
     return new Promise(async (resolve) => {
         let group: Group = await bot.pickGroup(group_id)
-        let group_files:(GfsDirStat | GfsFileStat)[] = await group.fs.dir()
-        let result_inRoot: string[] = []
-        let result_inDir: string[] = []
+        let group_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir()
+        let filestats_inRoot: GfsFileStat[] = []
+        let filestats_inDir: GfsFileStat[] = []
+        let filestats: GfsFileStat[] = []
         let promises: Promise<(GfsFileStat | GfsDirStat)[]>[] = [];
-        let result_all: string[] = []
-        let fullname:string = `${filename}.${ex_name}`
+        let result: string[] = []
+        let fullname: string = `${filename}.${ex_name}`
 
         for (let filestat of group_files) {
             if (filestat.is_dir) promises.push(group.fs.dir(filestat.fid));
-            else result_inRoot.push(filestat.fid);
+            else filestats_inRoot.push(filestat as GfsFileStat);
         }
         let filestats_dir = await Promise.all(promises);        //value [Dir1_filestats, Dir2_filestats, Dir3_filestats, ...]
         filestats_dir.forEach((filestats) => {
             filestats.forEach((filestat) => {
-                //判断关键词
-                if (filestat.name.toLowerCase() === fullname.toLowerCase()) result_inDir.push((filestat as GfsFileStat).fid)
+                filestats_inDir.push((filestat as GfsFileStat))
             })
         })
-        result_all = result_inDir
-        if(search_range==="all") result_all = result_inDir.concat(result_inRoot)
-        if(search_range==="inDir") result_all = result_inDir
-        if(search_range==="inRoot") result_all = result_inRoot
-        if (result_all.length > 0) resolve(result_all); else resolve(["-1"]);
+        if (search_range === "all") filestats = filestats_inDir.concat(filestats_inRoot)
+        if (search_range === "inDir") filestats = filestats_inDir
+        if (search_range === "inRoot") filestats = filestats_inRoot
+        
+        //判断关键词
+        filestats.forEach((filestat)=>{
+            if (filestat.name.toLowerCase() === fullname.toLowerCase()) {            //忽略大小写匹配
+                result.push(filestat.fid)
+            }
+        })
+
+        if (result.length > 0) resolve(result); else resolve(["-1"]);
     });
 }
