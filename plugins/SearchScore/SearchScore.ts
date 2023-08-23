@@ -63,7 +63,7 @@ async function searchFile(filename: string, ex_name: string, group_id: number, s
         //判断关键词
         filestats.forEach((filestat) => {
             if (compare(filestat.name, fullname)) result.push(filestat.fid);
-            else ;      //匹配失败，查找关键词别名列表
+            else;      //匹配失败，查找关键词别名列表
         })
 
         if (result.length > 0) resolve(result); else resolve(["-1"]);
@@ -74,24 +74,25 @@ async function searchFile(filename: string, ex_name: string, group_id: number, s
  * 比较两个字符串是否匹配（参数不分先后顺序）
  * @param word1 字符串1
  * @param word2 字符串2
+ * @returns 匹配返回 `true` ; 不匹配返回 `false`
  */
 function compare(word1: string, word2: string): boolean {
 
     word1 = word1.toLowerCase()     //去大小写
     word2 = word2.toLowerCase()
 
-    if(word1.includes(' ') || word2.includes(' ')){   //去空格
+    if (word1.includes(' ') || word2.includes(' ')) {   //去空格
         word1 = word1.replace(/\s/g, '')
         word2 = word2.replace(/\s/g, '')
     }
-    
+
     if (word1.includes('(') || word1.includes('（') || word2.includes('(') || word2.includes('（')) {   //去括号
         word1 = word1.replace(/\([^)]*\)/g, '')
         word2 = word2.replace(/\([^)]*\)/g, '')
         word1 = word1.replace(/\（[^）]*\）/g, '')
         word2 = word2.replace(/\（[^）]*\）/g, '')
     }
-    
+
     if (word1 === word2) return true;
     else return false
 }
