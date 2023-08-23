@@ -7,6 +7,11 @@ import YAML from 'yaml'
 const file = fs.readFileSync('plugins/SearchScore/config.yaml', 'utf8')
 const config = YAML.parse(file)
 
+bot.on("message.private",(msg)=>{
+    if (msg.raw_message.indexOf("/找") !== -1) {
+        msg.friend.sendMsg("请在群聊使用哦")
+    }
+})
 
 bot.on("message.group", async function (msg) {
     // if (msg.member.uid !== admin.account) { return }     // TODO 中间件:命令权限
