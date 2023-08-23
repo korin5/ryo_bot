@@ -14,33 +14,31 @@ bot.on("message.group", async function (msg) {
         var filename: string = msg.raw_message.replace('/找', '').trim()
         //输入  /找one-4
         if (/\-\d+/.test(filename)) {
-            // select = filename
             const parts = filename.split('-');
-            const extractedNumbers:Array<number> = [];
-
+            const extractedNumbers: Array<number> = [];
             for (let i = 1; i < parts.length; i++) {
                 const number = parseInt(parts[i], 10);
                 if (!isNaN(number)) {
                     extractedNumbers.push(number);
                 }
             }
-            select = parseInt(extractedNumbers.map(number => number.toString()).join(''))
-            console.log("select: "+select)
+            select = parseInt(extractedNumbers.map(number => number.toString()).join('')) - 1
             filename = filename.replace(/-\d+/g, '')
         }
+
         var is_find: boolean = false
         var search_group_range: string = config.search_group_range
         var search_file_range: string = config.search_file_range
         var search_other: boolean = false
 
 
-        if (search_group_range === "all" || search_group_range === "data") {
+        if ((search_group_range === "all" || search_group_range === "data") && select === 0) {
             //搜索数据库群
             for (let i in config.data_group_list) {
                 let group: Group = await bot.pickGroup(config.data_group_list[i])
                 let fid: string[] = await searchFile(filename, "pdf", config.data_group_list[i], search_file_range)
-                if (fid[select] !== "-1") {
-                    let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[select])
+                if (fid[0] !== "-1") {
+                    let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[0])
                     msg.group.fs.forward(filestat as GfsFileStat)
                     is_find = true
                     break
@@ -57,13 +55,16 @@ bot.on("message.group", async function (msg) {
             //搜索其他群
             for (let g of bot.gl.values()) {
                 if (config.data_group_list.includes(g?.group_id)) continue // 跳过数据库群
-                if (config.black_list.includes(g?.group_id)) continue
+                if (config.black_list.includes(g?.group_id)) continue       //跳过黑名单
                 let group: Group = await bot.pickGroup(g?.group_id)
                 let fid: string[] = await searchFile(filename, "pdf", g?.group_id, search_file_range)
-                console.log(fid)
-                if (fid[select] !== "-1") {
-                    msg.group.sendMsg(`在${group.name}找到了`)
+                if (fid[select] && fid[select] !== "-1") {
+                    if(select>=2) msg.group.sendMsg(`第${select + 1}个在${group.name}找到了`);
+                    else msg.group.sendMsg(`在${group.name}找到了`)
                     let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[select])    //TODO 插件配置文件:用户选择查看第几个文件
+                    // console.log("找到了" + fid.length + "个" + filename)
+                    // console.log(fid)
+                    // console.log("发送了第" + (select + 1) + "个: " + fid[select])
                     msg.group.fs.forward(filestat as GfsFileStat)
                     is_find = true
                     break
