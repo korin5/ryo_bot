@@ -1,24 +1,54 @@
 import { bot } from '../../src/test'
 import { GfsFileStat, GfsDirStat } from '../../src/gfs'
 import { Group } from '../../src/group'
+import fs from 'fs'
+import YAML from 'yaml'
 
-const ex_name: string = "pdf"
+const file = fs.readFileSync('plugins/SearchScore/config.yaml', 'utf8')
+const config = YAML.parse(file)
+
 
 bot.on("message.group", async function (msg) {
     // if (msg.member.uid !== admin.account) { return }     // TODO 中间件:命令权限
     if (msg.raw_message.indexOf("/找") !== -1) {
-        let filename: string = msg.raw_message.replace('/找', '').trim()
-        let is_find: boolean = false
-        // console.log(`开始找${filename}的谱子`)
-        for (let g of bot.gl.values()) {
-            if (g?.group_id === 1090340791) continue //TODO 中间件:黑名单
-            let group: Group = await bot.pickGroup(g?.group_id)
-            let fid: string[] = await searchFile(filename, ex_name, g?.group_id)  //TODO 插件配置文件:搜索范围
-            if (fid[0] !== "-1") {
-                let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[0])    //TODO 插件配置文件:用户选择查看第几个文件
-                msg.group.fs.forward(filestat as GfsFileStat)
-                is_find = true
-                break
+        const filename: string = msg.raw_message.replace('/找', '').trim()
+        var is_find: boolean = false
+        var search_group_range:string = config.search_group_range
+        var search_file_range:string = config.search_file_range
+        var search_other:boolean = false
+
+        if (search_group_range === "all" || search_group_range === "data") {
+            //搜索数据库群
+            for (let i in config.data_groups) {
+                let group: Group = await bot.pickGroup(config.data_groups[i])
+                let fid: string[] = await searchFile(filename, "pdf", config.data_groups[i],search_file_range)
+                if (fid[0] !== "-1") {
+                    let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[0])
+                    msg.group.fs.forward(filestat as GfsFileStat)
+                    is_find = true
+                    break
+                }
+            }
+        }
+
+        if (!is_find && search_group_range === "all") {
+            msg.group.sendMsg("数据库未收录，扩大查找范围")
+            search_other = true
+        }
+
+        if (search_other || search_group_range === "other") {
+            //搜索其他群
+            for (let g of bot.gl.values()) {
+                if (config.data_groups.includes(g?.group_id)) continue // 跳过数据库群
+                if (config.black_list.includes(g?.group_id)) continue
+                let group: Group = await bot.pickGroup(g?.group_id)
+                let fid: string[] = await searchFile(filename, "pdf", g?.group_id,search_file_range)
+                if (fid[0] !== "-1") {
+                    let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[0])    //TODO 插件配置文件:用户选择查看第几个文件
+                    msg.group.fs.forward(filestat as GfsFileStat)
+                    is_find = true
+                    break
+                }
             }
         }
         if (!is_find) {
@@ -37,14 +67,14 @@ bot.on("message.group", async function (msg) {
 */
 async function searchFile(filename: string, ex_name: string, group_id: number, search_range: string = "all"): Promise<string[]> {
     return new Promise(async (resolve) => {
-        let group: Group = await bot.pickGroup(group_id)
-        let group_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir()
-        let filestats_inRoot: GfsFileStat[] = []
-        let filestats_inDir: GfsFileStat[] = []
-        let filestats: GfsFileStat[] = []
-        let promises: Promise<(GfsFileStat | GfsDirStat)[]>[] = [];
-        let result: string[] = []
-        let fullname: string = `${filename}.${ex_name}`
+        var group: Group = await bot.pickGroup(group_id)
+        var group_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir()
+        var filestats_inRoot: GfsFileStat[] = []
+        var filestats_inDir: GfsFileStat[] = []
+        var filestats: GfsFileStat[] = []
+        var promises: Promise<(GfsFileStat | GfsDirStat)[]>[] = [];
+        var result: string[] = []
+        var fullname: string = `${filename}.${ex_name}`
 
         for (let filestat of group_files) {
             if (filestat.is_dir) promises.push(group.fs.dir(filestat.fid));
