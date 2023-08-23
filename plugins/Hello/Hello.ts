@@ -1,4 +1,4 @@
-import { bot } from '../src/test'
+import { bot } from '../../src/test'
 
 bot.on("message", function (msg) {
     if (msg.raw_message === "ryo") {

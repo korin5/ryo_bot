@@ -39,12 +39,11 @@ bot.login(config.bot.account, config.bot.password)
 export { bot }
 
 for (let i in config.plugins) {
-    try {
-        fs.accessSync(`plugins/${config.plugins[i]}/${config.plugins[i]}.ts`, fs.constants.F_OK);
         require(`../plugins/${config.plugins[i]}/${config.plugins[i]}`)
-    } catch (error) {
-        require(`../plugins/${config.plugins[i]}`)
-    }
+    // try {
+    // } catch (error) {
+    //     require(`../plugins/${config.plugins[i]}`)
+    // }
 }
 
 process.on("unhandledRejection", (reason, promise) => {
