@@ -8,6 +8,7 @@ bot.on("message.group", async function (msg) {
     // if (msg.member.uid !== admin.account) { return }     // TODO 中间件:命令权限
     if (msg.raw_message.indexOf("/找") !== -1) {
         let filename: string = msg.raw_message.replace('/找', '').trim()
+        let is_find: boolean = false
         // console.log(`开始找${filename}的谱子`)
         for (let g of bot.gl.values()) {
             if (g?.group_id === 1090340791) continue //TODO 中间件:黑名单
@@ -16,10 +17,12 @@ bot.on("message.group", async function (msg) {
             if (fid[0] !== "-1") {
                 let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[0])    //TODO 插件配置文件:用户选择查看第几个文件
                 msg.group.fs.forward(filestat as GfsFileStat)
+                is_find = true
                 break
-            } else {
-                msg.group.sendMsg("找不到哦")
             }
+        }
+        if (!is_find) {
+            msg.group.sendMsg("找不到哦")
         }
     }
 })
