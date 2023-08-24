@@ -40,7 +40,7 @@ bot.on("message.group", async function (msg) {
                 if (fid[select]) {
                     if (select >= 2) msg.group.sendMsg(`第${select + 1}个在${group.name}找到了`);
                     else msg.group.sendMsg(`在${group.name}找到了`)
-                    let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[select])    //TODO 插件配置文件:用户选择查看第几个文件
+                    let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[select])
                     msg.group.fs.forward(filestat as GfsFileStat)
                     is_find = true
                     break
