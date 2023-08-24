@@ -63,7 +63,7 @@ async function get_player_list() {
             if (filestat.is_dir) player_list.push(filestat.name);
         }
     }
-    return player_list
+    return player_list.sort()
 }
 
 /** 
