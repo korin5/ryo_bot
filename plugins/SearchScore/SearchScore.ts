@@ -18,7 +18,6 @@ bot.on("message.group", async function (msg) {
 
         //搜索数据库群
         if (search_group_range !== "other") {
-            console.log("search_data_group")
             for (let i in config.data_group_list) {
                 let group: Group = await bot.pickGroup(config.data_group_list[i])
                 let fid: string[] = await searchFile(filename, "pdf", config.data_group_list[i], search_file_range)
@@ -33,18 +32,15 @@ bot.on("message.group", async function (msg) {
 
         //搜索其他群
         if ((search_group_range !== "data") && !is_find) {
-            console.log("search_other_group")
             for (let g of bot.gl.values()) {
                 if (config.data_group_list.includes(g?.group_id)) continue // 跳过数据库群
                 if (config.black_list.includes(g?.group_id)) continue       //跳过黑名单
                 let group: Group = await bot.pickGroup(g?.group_id)
                 let fid: string[] = await searchFile(filename, "pdf", g?.group_id, search_file_range)
-                console.log(fid)
                 if (fid[select]) {
                     if (select >= 2) msg.group.sendMsg(`第${select + 1}个在${group.name}找到了`);
                     else msg.group.sendMsg(`在${group.name}找到了`)
                     let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[select])    //TODO 插件配置文件:用户选择查看第几个文件
-                    console.log(fid)
                     msg.group.fs.forward(filestat as GfsFileStat)
                     is_find = true
                     break
