@@ -12,27 +12,31 @@ bot.on("message.group", async function (msg) {
     if (!msg.raw_message.includes("/")) return
     const player_list: Array<string> = await get_player_list()
 
-    //输入 `/乐手`
+    //输入  /乐手
+    //返回  乐手列表
     if (msg.raw_message.replace(/\s/g, '') === "/乐手") {
         const message_list = player_list.map((line, index) => `${index + 1}. ${line}`).join('\n');
         msg.group.sendMsg("乐手列表\n" + message_list)
     }
-    //输入 `/乐手-2`
-    if((msg.raw_message.replace(/\s/g, '').replace(/-\d+/g, '') === "/乐手") && /-\d+/g.test(msg.raw_message)){
-        const [,arg_num] = await get_msg_info(msg.raw_message)
+    //输入  /乐手-1
+    //返回  井草圣二曲目列表
+    if ((msg.raw_message.replace(/\s/g, '').replace(/-\d+/g, '') === "/乐手") && /-\d+/g.test(msg.raw_message)) {
+        const [, arg_num] = await get_msg_info(msg.raw_message)
         var select = arg_num - 1
         const song_list = await get_song_list(player_list[select])
         const message_list = song_list.map((line, index) => `${index + 1}. ${line}`).join('\n');
         msg.group.sendMsg(`${player_list[select]}曲目列表\n` + message_list)
     }
-    //输入 `/井草圣二`
+    //输入  /井草圣二
+    //返回  井草圣二曲目列表
     if (player_list.includes(msg.raw_message.replace(/\s/g, '').replace('/', ''))) {
         const [player] = await get_msg_info(msg.raw_message)
         const song_list = await get_song_list(player)
         const message_list = song_list.map((line, index) => `${index + 1}. ${line}`).join('\n');
         msg.group.sendMsg(`${player}曲目列表\n` + message_list)
     }
-    //输入 `/井草圣二-2`
+    //输入  /井草圣二-7
+    //返回  ONE.pdf
     if (player_list.includes(msg.raw_message.replace(/\s/g, '').replace('/', '').replace(/-\d+/g, '')) && /-\d+/g.test(msg.raw_message)) {
         var [player, arg_num] = await get_msg_info(msg.raw_message)
         var select = arg_num - 1
@@ -57,6 +61,8 @@ bot.on("message.group", async function (msg) {
             msg.group.sendMsg("找不到哦")
         }
     }
+    //输入  /拿-1-7
+    //返回  ONE.pdf
 })
 
 /**
