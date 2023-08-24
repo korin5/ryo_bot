@@ -52,8 +52,6 @@ bot.on("message.group", async function (msg) {
         for (let i in config.data_group_list) {
             let group: Group = await bot.pickGroup(config.data_group_list[i])
             fid.push(...await searchFile(song_list[select], player, "pdf", config.data_group_list[i]))
-            console.log("找的是" + song_list[select])
-            console.log(fid)
             if (fid[0]) {
                 let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[0])
                 msg.group.fs.forward(filestat as GfsFileStat)
