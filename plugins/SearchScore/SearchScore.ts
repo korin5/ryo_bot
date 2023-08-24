@@ -14,7 +14,7 @@ bot.on("message.group", async function (msg) {
     //输入  /找ONE-3
     //返回  第三个 ONE.pdf
     if (msg.raw_message.includes("/找")) {
-        var [filename, arg_num] = await get_msg_info(msg.raw_message)
+        var [filename, arg_num] = await get_msg_info(msg.raw_message.replace('/找', ''))
         var select: number = arg_num <= 0 ? 0 : arg_num - 1
         var fid: string[] = []
         var search_group_range: string = config.search_group_range
@@ -138,7 +138,7 @@ function compare(word1: string, word2: string): boolean {
  * @returns `[文件名,数字参数,字符参数]` 类型分别为 str , num , str
  */
 async function get_msg_info(message: string): Promise<[string, number, string]> {
-    var filename: string = message.replace('/找', '').trim().replace(/-\d+/g, '')
+    var filename: string = message.trim().replace(/-\d+/g, '')
     var arg_num: number = 0
     var arg_str: string = ""
     if (/\-\d+/.test(message)) {
