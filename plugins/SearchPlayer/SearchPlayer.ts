@@ -65,7 +65,7 @@ bot.on("message.group", async function (msg) {
     }
     //输入  /拿-1-7
     //返回  ONE.pdf
-    if (msg.raw_message.includes('/拿') && /-\d+-\d+/.test(msg.raw_message)) {
+    if (msg.raw_message.includes('/找') && /-\d+-\d+/.test(msg.raw_message)) {
         var arg_num_list: number[] = await get_num_args(msg.raw_message.replace("/拿", ''))
         var select_player = arg_num_list[0] - 1
         var select_song = arg_num_list[1] - 1
