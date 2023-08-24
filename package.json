@@ -10,6 +10,8 @@
     "build_": "tsc && copy .\\src\\core\\protobuf\\*.min.* lib\\core\\protobuf",
     "docs": "typedoc src/index.ts",
     "dev": "ts-node src/test.ts",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "pub": "npm publish --access public",
     "clean": "rm -rf lib"
   },
@@ -39,6 +41,7 @@
     "probe-image-size": "^7.2.2",
     "triptrap": "^0.0.17",
     "ts-node": "^10.9.1",
+    "vuepress": "^1.9.10",
     "yaml": "^2.3.1"
   },
   "devDependencies": {
