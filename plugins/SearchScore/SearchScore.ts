@@ -122,10 +122,10 @@ function compare(word1: string, word2: string): boolean {
     }
 
     if (word1.includes('(') || word1.includes('（') || word2.includes('(') || word2.includes('（')) {   //去括号
-        word1 = word1.replace(/\([^)]0-9\)/g, '')
-        word2 = word2.replace(/\([^)]0-9\)/g, '')
-        word1 = word1.replace(/\（[^）]0-9\）/g, '')
-        word2 = word2.replace(/\（[^）]0-9\）/g, '')
+        word1 = word1.replace(/\([^)]*\d+[^)]*\)/g, '')
+        word2 = word2.replace(/\([^)]*\d+[^)]*\)/g, '')
+        word1 = word1.replace(/\（[^）]*\d+[^）]*\）/g, '')
+        word2 = word2.replace(/\（[^）]*\d+[^）]*\）/g, '')
     }
 
     if (word1 === word2) return true;
