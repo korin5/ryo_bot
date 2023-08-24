@@ -17,6 +17,14 @@ bot.on("message.group", async function (msg) {
         const message_list = player_list.map((line, index) => `${index + 1}. ${line}`).join('\n');
         msg.group.sendMsg("乐手列表\n" + message_list)
     }
+    //输入 `/乐手-2`
+    if((msg.raw_message.replace(/\s/g, '').replace(/-\d+/g, '') === "/乐手") && /-\d+/g.test(msg.raw_message)){
+        const [,arg_num] = await get_msg_info(msg.raw_message)
+        var select = arg_num - 1
+        const song_list = await get_song_list(player_list[select])
+        const message_list = song_list.map((line, index) => `${index + 1}. ${line}`).join('\n');
+        msg.group.sendMsg(`${player_list[select]}曲目列表\n` + message_list)
+    }
     //输入 `/井草圣二`
     if (player_list.includes(msg.raw_message.replace(/\s/g, '').replace('/', ''))) {
         const [player] = await get_msg_info(msg.raw_message)
@@ -28,14 +36,15 @@ bot.on("message.group", async function (msg) {
     if (player_list.includes(msg.raw_message.replace(/\s/g, '').replace('/', '').replace(/-\d+/g, '')) && /-\d+/g.test(msg.raw_message)) {
         var [player, arg_num] = await get_msg_info(msg.raw_message)
         var select = arg_num - 1
+        let fid: string[] = []
         var is_find: boolean = false
         const song_list = await get_song_list(player)
 
         //搜索数据库群
         for (let i in config.data_group_list) {
             let group: Group = await bot.pickGroup(config.data_group_list[i])
-            let fid: string[] = await searchFile(song_list[select],player, "pdf", config.data_group_list[i])
-            console.log("找的是"+song_list[select])
+            fid.push(...await searchFile(song_list[select], player, "pdf", config.data_group_list[i]))
+            console.log("找的是" + song_list[select])
             console.log(fid)
             if (fid[0]) {
                 let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[0])
@@ -130,7 +139,7 @@ async function searchFile(filename: string, player: string, ex_name: string, gro
         var fullname: string = `${filename}.${ex_name}`
 
         for (let filestat of group_files) {
-            if (filestat.is_dir&&filestat.name===player) promises.push(group.fs.dir(...[filestat.fid, , 1000]));
+            if (filestat.is_dir && filestat.name === player) promises.push(group.fs.dir(...[filestat.fid, , 1000]));
         }
         let filestats_dir = await Promise.all(promises);        //value [Dir1_filestats, Dir2_filestats, Dir3_filestats, ...]
         filestats_dir.forEach((filestats) => {
