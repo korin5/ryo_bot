@@ -1,10 +1,10 @@
 ---
 home: true
 heroText: ryo_bot
-tagline: 基于 ICQQ 开发的QQ机器人
-lang: zh-CN
+tagline: QQ robot developed based on ICQQ
+lang: en-US
 sidebar: false
-actionText: 使用说明 →
+actionText: To Use →
 actionLink: /use
 features:
 - title: 目的
