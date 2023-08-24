@@ -51,7 +51,7 @@ bot.on("message.group", async function (msg) {
             search_other = true
         }
 
-        if (search_other || search_group_range === "other") {
+        if (search_other || search_group_range === "other" || select > 0 ) {
             //搜索其他群
             for (let g of bot.gl.values()) {
                 if (config.data_group_list.includes(g?.group_id)) continue // 跳过数据库群
