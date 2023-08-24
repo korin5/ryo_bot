@@ -114,17 +114,8 @@ async function get_msg_info(message: string): Promise<[string, number, string]> 
     var player: string = message.replace(/-\d+/g, '').replace('/', '').trim()
     var arg_num: number = 0
     var arg_str: string = ""
-    if (/\-\d+/.test(message)) {
-        const parts = message.split('-');
-        const extractedNumbers: Array<number> = [];
-        for (let i = 1; i < parts.length; i++) {
-            const number = parseInt(parts[i], 10);
-            if (!isNaN(number)) {
-                extractedNumbers.push(number);
-            }
-        }
-        arg_num = parseInt(extractedNumbers.map(number => number.toString()).join(''))
-    }
+    var match = message.match(/-(\d+)/)
+    if (match) arg_num = parseInt(match[1]);
     return [player, arg_num, arg_str]
 }
 
