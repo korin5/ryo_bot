@@ -64,5 +64,5 @@ async function get_song_list(player: string): Promise<string[]> {
             song_list.push(filestat.name.replace('.pdf', ''));
         }
     }
-    return song_list
+    return song_list.sort()
 }
