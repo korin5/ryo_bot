@@ -119,7 +119,10 @@ async function get_song_list(player: string): Promise<string[]> {
         var group_files: (GfsDirStat | GfsFileStat)[] = await data_group.fs.dir(...[, , 1000])
         var player_dir_fid: string = ""
         for (let filestat of group_files) {
-            if (filestat.is_dir && filestat.name === player) player_dir_fid = filestat.fid; break;
+            if (filestat.is_dir && (filestat.name === player)){
+                player_dir_fid = filestat.fid
+                break
+            }
         }
         var player_songs: (GfsDirStat | GfsFileStat)[] = await data_group.fs.dir(...[player_dir_fid, , 1000])
         for (let filestat of player_songs) {
@@ -135,7 +138,7 @@ async function get_song_list(player: string): Promise<string[]> {
  * @returns `[乐手名,数字参数,字符参数]` 类型分别为 str , num , str
  */
 async function get_msg_info(message: string): Promise<[string, number, string]> {
-    var player: string = message.replace(/-\d+/g, '').replace('/', '').trim()
+    var player: string = message.replace(/-\d+/g, '').replace('/', '').replace(/\s/g, '')
     var arg_num: number = 0
     var arg_str: string = ""
     var match = message.match(/-(\d+)/)
@@ -177,7 +180,7 @@ async function searchFile(filename: string, player: string, ex_name: string, gro
         var fullname: string = `${filename}.${ex_name}`
 
         for (let filestat of group_files) {
-            if (filestat.is_dir && filestat.name === player) promises.push(group.fs.dir(...[filestat.fid, , 1000]));
+            if (filestat.is_dir && (filestat.name === player)) promises.push(group.fs.dir(...[filestat.fid, , 1000]));
         }
         let filestats_dir = await Promise.all(promises);        //value [Dir1_filestats, Dir2_filestats, Dir3_filestats, ...]
         filestats_dir.forEach((filestats) => {
@@ -224,3 +227,9 @@ function compare(word1: string, word2: string): boolean {
     if (word1 === word2) return true;
     else return false
 }
+
+bot.on("message.private", (msg) => {
+    if (msg.raw_message.includes("/乐手")) {
+        msg.friend.sendMsg("请在群内使用哦")
+    }
+})
