@@ -8,11 +8,6 @@ module.exports = {
       { text: '开发文档', link: '/develop' },
       // { text: 'External', link: 'https://google.com' },
     ],
-    sidebar: [
-      '/',
-      '/page-a',
-      ['/page-b', 'Explicit link text']
-    ],
     repo: 'korin5/ryo_bot',
   }
 }
