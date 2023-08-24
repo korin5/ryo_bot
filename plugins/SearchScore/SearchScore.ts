@@ -9,6 +9,10 @@ const config = YAML.parse(file)
 
 bot.on("message.group", async function (msg) {
     // if (msg.member.uid !== admin.account) { return }     // TODO 中间件:命令权限
+    //输入  /找ONE
+    //返回  ONE.pdf
+    //输入  /找ONE-3
+    //返回  第三个 ONE.pdf
     if (msg.raw_message.includes("/找")) {
         var [filename, arg_num] = await get_msg_info(msg.raw_message)
         var select: number = arg_num <= 0 ? 0 : arg_num - 1
@@ -22,7 +26,6 @@ bot.on("message.group", async function (msg) {
             for (let i in config.data_group_list) {
                 let group: Group = await bot.pickGroup(config.data_group_list[i])
                 fid.push(...await searchFile(filename, "pdf", config.data_group_list[i], search_file_range))
-                console.log(fid)
                 if (fid[select]) {
                     let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[select])
                     msg.group.fs.forward(filestat as GfsFileStat)
@@ -39,7 +42,6 @@ bot.on("message.group", async function (msg) {
                 if (config.black_list.includes(g?.group_id)) continue       //跳过黑名单
                 let group: Group = await bot.pickGroup(g?.group_id)
                 fid.push(...await searchFile(filename, "pdf", g?.group_id, search_file_range))
-                console.log(fid)
                 if (fid[select]) {
                     if (select >= 2) msg.group.sendMsg(`第${select + 1}个在${group.name}找到了`);
                     else msg.group.sendMsg(`在${group.name}找到了`)
