@@ -3,7 +3,6 @@ import { GfsFileStat, GfsDirStat } from '../../src/gfs'
 import { Group } from '../../src/group'
 import fs from 'fs'
 import YAML from 'yaml'
-import internal from 'stream'
 
 const file = fs.readFileSync('plugins/SearchScore/config.yaml', 'utf8')
 const config = YAML.parse(file)
@@ -11,6 +10,7 @@ const config = YAML.parse(file)
 bot.on("message.group", async function (msg) {
     if (!msg.raw_message.includes("/")) return
     const player_list: Array<string> = await get_player_list()
+    var song_list: string[]
 
     //输入  /乐手
     //返回  乐手列表
@@ -22,11 +22,11 @@ bot.on("message.group", async function (msg) {
     //返回  井草圣二曲目列表
     if ((msg.raw_message.replace(/\s/g, '').replace(/-\d+/g, '') === "/乐手") && /-\d+/g.test(msg.raw_message)) {
         const [, arg_num] = await get_msg_info(msg.raw_message)
-        var select = arg_num - 1
-        if (player_list[select]) {
-            const song_list = await get_song_list(player_list[select])
+        var select_player = arg_num - 1
+        if (player_list[select_player]) {
+            song_list = await get_song_list(player_list[select_player])
             const message_list = song_list.map((line, index) => `${index + 1}. ${line}`).join('\n');
-            msg.group.sendMsg(`${player_list[select]}曲目列表\n` + message_list)
+            msg.group.sendMsg(`${player_list[select_player]}曲目列表\n` + message_list)
         } else {
             msg.group.sendMsg("找不到哦")
         }
@@ -35,7 +35,7 @@ bot.on("message.group", async function (msg) {
     //返回  井草圣二曲目列表
     if (player_list.includes(msg.raw_message.replace(/\s/g, '').replace('/', ''))) {
         const [player] = await get_msg_info(msg.raw_message)
-        const song_list = await get_song_list(player)
+        song_list = await get_song_list(player)
         const message_list = song_list.map((line, index) => `${index + 1}. ${line}`).join('\n');
         msg.group.sendMsg(`${player}曲目列表\n` + message_list)
     }
@@ -43,15 +43,15 @@ bot.on("message.group", async function (msg) {
     //返回  ONE.pdf
     if (player_list.includes(msg.raw_message.replace(/\s/g, '').replace('/', '').replace(/-\d+/g, '')) && /-\d+/g.test(msg.raw_message)) {
         var [player, arg_num] = await get_msg_info(msg.raw_message)
-        var select = arg_num - 1
+        var select_song = arg_num - 1
         let fid: string[] = []
         var is_find: boolean = false
-        const song_list = await get_song_list(player)
+        song_list = await get_song_list(player)
 
         //搜索数据库群
         for (let i in config.data_group_list) {
             let group: Group = await bot.pickGroup(config.data_group_list[i])
-            fid.push(...await searchFile(song_list[select], player, "pdf", config.data_group_list[i]))
+            fid.push(...await searchFile(song_list[select_song], player, "pdf", config.data_group_list[i]))
             if (fid[0]) {
                 let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[0])
                 msg.group.fs.forward(filestat as GfsFileStat)
@@ -65,6 +65,30 @@ bot.on("message.group", async function (msg) {
     }
     //输入  /拿-1-7
     //返回  ONE.pdf
+    if (msg.raw_message.includes('/拿') && /-\d+-\d+/.test(msg.raw_message)) {
+        var arg_num_list: number[] = await get_num_args(msg.raw_message.replace("/拿", ''))
+        var select_player = arg_num_list[0] - 1
+        var select_song = arg_num_list[1] - 1
+        var is_find: boolean = false
+        if (player_list[select_player]) {
+            let fid: string[] = []
+            song_list = await get_song_list(player_list[select_player])
+            for (let i in config.data_group_list) {
+                let group: Group = await bot.pickGroup(config.data_group_list[i])
+                fid.push(...await searchFile(song_list[select_song], player_list[select_player], "pdf", config.data_group_list[i]))
+                if (fid[0]) {
+                    let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[0])
+                    msg.group.fs.forward(filestat as GfsFileStat)
+                    is_find = true
+                    break
+                }
+            }
+        }
+        if (!is_find) {
+            msg.group.sendMsg("找不到哦")
+        }
+
+    }
 })
 
 /**
@@ -117,6 +141,21 @@ async function get_msg_info(message: string): Promise<[string, number, string]> 
     var match = message.match(/-(\d+)/)
     if (match) arg_num = parseInt(match[1]);
     return [player, arg_num, arg_str]
+}
+
+/**
+ * 解析消息中的多个数字参数 (仅接收数字参数) (最多5个)
+ * @param message 消息文本
+ * @returns `[数字参数1,数字参数2,数字参数3...]`
+ */
+async function get_num_args(message: string): Promise<number[]> {
+    message = message.replace(/\s/g, '')
+    var arg_num_list: number[] = []
+    var arg_str_list: string[] = [...message.matchAll(/-(\d+)/g)].map(match => match[1])
+    arg_str_list.forEach((arg) => {
+        arg_num_list.push(parseInt(arg))
+    })
+    return arg_num_list
 }
 
 /**
