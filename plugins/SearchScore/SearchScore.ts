@@ -32,7 +32,7 @@ bot.on("message.group", async function (msg) {
         var search_other: boolean = false
 
 
-        if ((search_group_range === "all" || search_group_range === "data") && select === 0) {
+        if ((search_group_range === "all" || search_group_range === "data") && select <= 0) {
             //搜索数据库群
             for (let i in config.data_group_list) {
                 let group: Group = await bot.pickGroup(config.data_group_list[i])
