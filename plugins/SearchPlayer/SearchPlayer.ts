@@ -23,9 +23,13 @@ bot.on("message.group", async function (msg) {
     if ((msg.raw_message.replace(/\s/g, '').replace(/-\d+/g, '') === "/乐手") && /-\d+/g.test(msg.raw_message)) {
         const [, arg_num] = await get_msg_info(msg.raw_message)
         var select = arg_num - 1
-        const song_list = await get_song_list(player_list[select])
-        const message_list = song_list.map((line, index) => `${index + 1}. ${line}`).join('\n');
-        msg.group.sendMsg(`${player_list[select]}曲目列表\n` + message_list)
+        if (player_list[select]) {
+            const song_list = await get_song_list(player_list[select])
+            const message_list = song_list.map((line, index) => `${index + 1}. ${line}`).join('\n');
+            msg.group.sendMsg(`${player_list[select]}曲目列表\n` + message_list)
+        } else {
+            msg.group.sendMsg("找不到哦")
+        }
     }
     //输入  /井草圣二
     //返回  井草圣二曲目列表
