@@ -13,7 +13,7 @@ bot.on("message.group", async function (msg) {
     //返回  ONE.pdf
     //输入  /找ONE-3
     //返回  第三个 ONE.pdf
-    if (msg.raw_message.includes("/找")) {
+    if (msg.raw_message.includes("/找") && !/-\d+-\d+/.test(msg.raw_message)) {
         var [filename, arg_num] = await get_msg_info(msg.raw_message.replace('/找', ''))
         var select: number = arg_num <= 0 ? 0 : arg_num - 1
         var fid: string[] = []
@@ -147,7 +147,7 @@ async function get_msg_info(message: string): Promise<[string, number, string]> 
 }
 
 bot.on("message.private", (msg) => {
-    if (msg.raw_message.indexOf("/找") !== -1) {
-        msg.friend.sendMsg("请在群聊使用哦")
+    if (msg.raw_message.includes("/找")) {
+        msg.friend.sendMsg("请在群内使用哦")
     }
 })
