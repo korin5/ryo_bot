@@ -4,8 +4,13 @@ heroText: ryo_bot
 tagline: ICQQに基づいて開発されたQQロボット
 lang: ja-JP
 sidebar: false
-actionText: 使用方法 →
-actionLink: /use
+actions:
+  - text: 使用方法
+    link: /ja/use
+    type: primary
+  - text: 概要
+    link: /ja/intro
+    type: secondary
 features:
 - title: 目的
   details: 为吉他爱好者提供快速便捷的找谱服务，分享大陆用户不方便购买的热门曲谱
