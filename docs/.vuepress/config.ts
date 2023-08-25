@@ -8,15 +8,6 @@ module.exports = {
         nav: [
           { text: '使用说明', link: '/use' },
           { text: '开发文档', link: '/develop' },
-          {
-            text: 'Language',
-            ariaLabel: 'Language Menu',
-            items: [
-              { text: '简体中文', link: '/' },
-              { text: 'English', link: '/en/' },
-              { text: '日本語', link: '/ja/' }
-            ]
-          },
         ],
         repo: 'korin5/ryo_bot',
         sidebar: 'auto',
@@ -24,17 +15,8 @@ module.exports = {
       },
       '/en/': {
         nav: [
-          { text: 'To Use', link: '/use' },
-          { text: 'Develop', link: '/develop' },
-          {
-            text: 'Language',
-            ariaLabel: 'Language Menu',
-            items: [
-              { text: '简体中文', link: '/' },
-              { text: 'English', link: '/en/' },
-              { text: '日本語', link: '/ja/' }
-            ]
-          },
+          { text: 'How To Use', link: '/en/use' },
+          { text: 'Develop', link: '/en/develop' },
         ],
         repo: 'korin5/ryo_bot',
         sidebar: 'auto',
@@ -42,45 +24,29 @@ module.exports = {
       },
       '/ja/': {
         nav: [
-          { text: '使用方法', link: '/use' },
-          { text: 'かいはつ', link: '/develop' },
-          {
-            text: 'Language',
-            ariaLabel: 'Language Menu',
-            items: [
-              { text: '简体中文', link: '/' },
-              { text: 'English', link: '/en/' },
-              { text: '日本語', link: '/ja/' }
-            ]
-          },
+          { text: '使用方法', link: '/ja/use' },
+          { text: 'かいはつ', link: '/ja/develop' },
         ],
         repo: 'korin5/ryo_bot',
         sidebar: 'auto',
         smoothScroll: true
       }
     },
-
+    repo: 'korin5/ryo_bot',
+    // repoLabel: 'GitHub',
   },
 
 
 
-  // locales: {
-  //   // 键名是该语言所属的子路径
-  //   // 作为特例，默认语言可以使用 '/' 作为其路径。
-  //   '/': {
-  //     lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性
-  //     title: 'VuePress',
-  //     description: '驱动的静态网站生成器'
-  //   },
-  //   '/en/': {
-  //     lang: 'en-US',
-  //     title: 'VuePress',
-  //     description: 'Vue-powered Static Site GeneratorVue'
-  //   },
-  //   '/ja/': {
-  //     lang: 'ja-JP',
-  //     title: 'VuePress',
-  //     description: 'Vue-powered Static Site GeneratorVue'
-  //   }
-  // }
+  locales: {
+    '/': {
+      lang: 'zh-CN',
+    },
+    '/en/': {
+      lang: 'en-US',
+    },
+    '/ja/': {
+      lang: 'ja-JP',
+    }
+  }
 }
