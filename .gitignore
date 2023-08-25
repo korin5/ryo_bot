@@ -2,6 +2,7 @@ node_modules
 .vscode
 .temp
 .cache
+docs/.vuepress/dist
 data
 lib/**/*.d.ts
 config.yaml
