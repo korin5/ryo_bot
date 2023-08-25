@@ -5,6 +5,8 @@ module.exports = {
   themeConfig: {
     locales: {
       '/': {
+        selectText: "Language",
+        lable: "简体中文",
         nav: [
           { text: '使用说明', link: '/use' },
           { text: '开发文档', link: '/develop' },
@@ -14,6 +16,8 @@ module.exports = {
         smoothScroll: true
       },
       '/en/': {
+        selectText: "Language",
+        lable: "English",
         nav: [
           { text: 'How To Use', link: '/en/use' },
           { text: 'Develop', link: '/en/develop' },
@@ -23,6 +27,8 @@ module.exports = {
         smoothScroll: true
       },
       '/ja/': {
+        selectText: "Language",
+        lable: "日本語",
         nav: [
           { text: '使用方法', link: '/ja/use' },
           { text: 'かいはつ', link: '/ja/develop' },
