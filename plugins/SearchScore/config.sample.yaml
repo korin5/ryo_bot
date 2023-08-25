@@ -1,0 +1,10 @@
+data_group_list: 
+  # 数据库群列表
+  - 345345345
+
+black_list:
+  # 黑名单群列表
+  - 543543543
+
+search_group_range : "all"
+search_file_range : "all"

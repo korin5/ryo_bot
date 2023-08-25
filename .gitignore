@@ -1,0 +1,15 @@
+node_modules
+.vscode
+.temp
+.cache
+docs/.vuepress/dist
+data
+lib/**/*.d.ts
+config.yaml
+lib/**/*.js
+!src/**/protobuf.min.d.ts
+!src/**/protobuf.min.js
+package-lock.json
+pnpm-lock.yaml
+unidbg-fetch-qsign/*.log
+unidbg-fetch-qsign/txlib/**/.system_android_l2
