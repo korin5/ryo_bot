@@ -1,4 +1,7 @@
-module.exports = {
+import { defineUserConfig } from 'vuepress'
+import { defaultTheme } from 'vuepress'
+
+export default defineUserConfig({
   title: 'ryo_bot',
   description: '基于ICQQ开发的QQ机器人，这里是说明文档',
   base: '/ryo_bot/',
@@ -13,7 +16,7 @@ module.exports = {
       lang: 'ja-JP',
     }
   },
-  themeConfig: {
+  theme: defaultTheme({
     locales: {
       '/': {
         label: '简体中文',
@@ -42,6 +45,5 @@ module.exports = {
       smoothScroll: true
     },
     repo: 'korin5/ryo_bot',
-    // repoLabel: 'GitHub',
-  }
-}
+  })
+})

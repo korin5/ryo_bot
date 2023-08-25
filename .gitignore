@@ -1,5 +1,7 @@
 node_modules
 .vscode
+.temp
+.cache
 data
 lib/**/*.d.ts
 config.yaml

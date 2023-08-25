@@ -41,7 +41,7 @@
     "probe-image-size": "^7.2.2",
     "triptrap": "^0.0.17",
     "ts-node": "^10.9.1",
-    "vuepress": "^1.9.10",
+    "vuepress": "^2.0.0-beta.66",
     "yaml": "^2.3.1"
   },
   "devDependencies": {
