@@ -5,6 +5,7 @@ export default defineUserConfig({
   title: 'ryo_bot',
   description: '基于ICQQ开发的QQ机器人，这里是说明文档',
   base: '/ryo_bot/',
+  head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
   locales: {
     '/': {
       lang: 'zh-CN',
@@ -19,23 +20,26 @@ export default defineUserConfig({
   theme: defaultTheme({
     locales: {
       '/': {
-        label: '简体中文',
+        selectLanguageName: '简体中文',
         editLinkText: '在 GitHub 上编辑此页',
-        nav: [
+        navbar: [
+          { text: '项目简介', link: '/intro' },
           { text: '使用说明', link: '/use' },
           { text: '开发文档', link: '/develop' },
         ]
       },
       '/en/': {
-        label: 'English',
-        nav: [
-          { text: 'How To Use', link: '/en/use' },
-          { text: 'Develop', link: '/en/develop' },
+        selectLanguageName: 'English',
+        navbar: [
+          { text: 'Introduction', link: '/en/intro' },
+          { text: 'User Manual', link: '/en/use' },
+          { text: 'Develop Doc', link: '/en/develop' },
         ]
       },
       '/ja/': {
-        label: '日本語',
-        nav: [
+        selectLanguageName: '日本語',
+        navbar: [
+          { text: '概要', link: '/ja/intro' },
           { text: '使用方法', link: '/ja/use' },
           { text: 'かいはつ', link: '/ja/develop' },
         ]
