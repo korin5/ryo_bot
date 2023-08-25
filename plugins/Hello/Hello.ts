@@ -5,6 +5,6 @@ bot.on("message", function (msg) {
         msg.reply("Im alive!", false)
     }
     if (msg.raw_message === "/help") {
-        msg.reply("还没做呢", false)
+        msg.reply("用户手册：https://ryobot.netlify.app/use.html", false)
     }
 })
