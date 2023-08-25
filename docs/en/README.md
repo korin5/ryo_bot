@@ -4,7 +4,7 @@ heroText: ryo_bot
 tagline: QQ robot developed based on ICQQ
 lang: en-US
 sidebar: false
-actionText: To Use →
+actionText: How To Use →
 actionLink: /use
 features:
 - title: 目的
