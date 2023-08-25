@@ -43,8 +43,9 @@ bot.on("message.group", async function (msg) {
                 let group: Group = await bot.pickGroup(g?.group_id)
                 fid.push(...await searchFile(filename, "pdf", g?.group_id, search_file_range))
                 if (fid[select]) {
-                    if (select >= 2) msg.group.sendMsg(`第${select + 1}个在${group.name}找到了`);
-                    else msg.group.sendMsg(`在${group.name}找到了`)
+                    // if (select >= 2) msg.group.sendMsg(`第${select + 1}个转发自${group.group_id}`);
+                    // else msg.group.sendMsg(`转发自${group.group_id}`)
+                    msg.group.sendMsg(`转发自${group.group_id}`)
                     let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[select])
                     msg.group.fs.forward(filestat as GfsFileStat)
                     is_find = true
