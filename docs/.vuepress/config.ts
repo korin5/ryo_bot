@@ -24,7 +24,7 @@ export default defineUserConfig({
         editLinkText: '在 GitHub 上编辑此页',
         navbar: [
           { text: '项目简介', link: '/intro' },
-          { text: '使用说明', link: '/use' },
+          { text: '用户文档', link: '/use' },
           { text: '开发文档', link: '/develop' },
         ]
       },
