@@ -5,7 +5,7 @@ tagline: 基于 ICQQ 开发的QQ机器人
 lang: zh-CN
 sidebar: false
 actions:
-  - text: 使用说明
+  - text: 用户文档
     link: /use
     type: primary
   - text: 项目简介
