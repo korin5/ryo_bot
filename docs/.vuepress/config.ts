@@ -49,5 +49,9 @@ export default defineUserConfig({
       smoothScroll: true
     },
     repo: 'korin5/ryo_bot',
+    docsRepo: 'https://github.com/korin5/ryo_bot',
+    docsBranch: 'dev',
+    docsDir: 'docs',
+    editLinkPattern: ':repo/edit/:branch/:path',
   })
 })
