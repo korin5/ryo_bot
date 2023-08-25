@@ -63,7 +63,7 @@ bot.on("message.group", async function (msg) {
             msg.group.sendMsg("找不到哦")
         }
     }
-    //输入  /拿-1-7
+    //输入  /找-1-7
     //返回  ONE.pdf
     if (msg.raw_message.includes('/找') && /-\d+-\d+/.test(msg.raw_message)) {
         var arg_num_list: number[] = await get_num_args(msg.raw_message.replace("/拿", ''))
