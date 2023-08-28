@@ -23,13 +23,14 @@ export default defineUserConfig({
         selectLanguageName: '简体中文',
         editLinkText: '在 GitHub 上编辑此页',
         navbar: [
-          { text: '自我介绍', link: '/intro' },
+          { text: '项目简介', link: '/intro' },
           { text: '用户文档', link: '/use' },
           { text: '开发文档', link: '/develop' },
         ]
       },
       '/en/': {
         selectLanguageName: 'English',
+        editLinkText: 'Edit this page on GitHub',
         navbar: [
           { text: 'Introduction', link: '/en/intro' },
           { text: 'User Manual', link: '/en/use' },
@@ -38,8 +39,9 @@ export default defineUserConfig({
       },
       '/ja/': {
         selectLanguageName: '日本語',
+        editLinkText: 'Edit this page on GitHub',
         navbar: [
-          { text: '自己紹介', link: '/ja/intro' },
+          { text: 'プロ紹介', link: '/ja/intro' },
           { text: '使用方法', link: '/ja/use' },
           { text: 'かいはつ', link: '/ja/develop' },
         ]

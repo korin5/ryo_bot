@@ -8,7 +8,7 @@ actions:
   - text: 用户文档
     link: /use
     type: primary
-  - text: 自我介绍
+  - text: 项目简介
     link: /intro
     type: secondary
 features:
