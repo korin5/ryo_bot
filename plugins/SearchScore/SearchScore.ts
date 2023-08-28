@@ -72,7 +72,7 @@ bot.on("message.group", async function (msg) {
 async function searchFile(filename: string, ex_name: string, group_id: number, search_range: string = "all"): Promise<string[]> {
     return new Promise(async (resolve) => {
         var group: Group = await bot.pickGroup(group_id)
-        var group_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir(...[, , 1000])
+        var group_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir(...[, , 1500])
         var filestats_inRoot: GfsFileStat[] = []
         var filestats_inDir: GfsFileStat[] = []
         var filestats: GfsFileStat[] = []
@@ -81,7 +81,7 @@ async function searchFile(filename: string, ex_name: string, group_id: number, s
         var fullname: string = `${filename}.${ex_name}`
 
         for (let filestat of group_files) {
-            if (filestat.is_dir) promises.push(group.fs.dir(...[filestat.fid, , 1000]));
+            if (filestat.is_dir) promises.push(group.fs.dir(...[filestat.fid, , 1500]));
             else if ((filestat as GfsFileStat).name.endsWith(ex_name)) {
                 filestats_inRoot.push(filestat as GfsFileStat)
             }
