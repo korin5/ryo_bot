@@ -29,6 +29,7 @@ bot.on("message.group", async function (msg) {
                 if (fid[select]) {
                     let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[select])
                     msg.group.fs.forward(filestat as GfsFileStat)
+                    console.log(`${filestat.name}转发自数据库`)
                     is_find = true
                     break
                 }
@@ -45,9 +46,10 @@ bot.on("message.group", async function (msg) {
                 if (fid[select]) {
                     // if (select >= 2) msg.group.sendMsg(`第${select + 1}个转发自${group.group_id}`);
                     // else msg.group.sendMsg(`转发自${group.group_id}`)
-                    msg.group.sendMsg(`转发自${group.group_id}`)
+                    // msg.group.sendMsg(`转发自${group.group_id}`)
                     let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[select])
                     msg.group.fs.forward(filestat as GfsFileStat)
+                    console.log(`${filestat.name}转发自${group.group_id}`)
                     is_find = true
                     break
                 }
