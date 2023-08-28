@@ -99,7 +99,7 @@ async function get_player_list() {
     var player_list: Array<string> = []
     for (let group_id of config.data_group_list) {
         var data_group: Group = await bot.pickGroup(group_id)
-        var group_files: (GfsDirStat | GfsFileStat)[] = await data_group.fs.dir(...[, , 1500])
+        var group_files: (GfsDirStat | GfsFileStat)[] = await data_group.fs.dir(...[, , 100])
         for (let filestat of group_files) {
             if (filestat.is_dir) player_list.push(filestat.name);
         }
@@ -116,15 +116,20 @@ async function get_song_list(player: string): Promise<string[]> {
     var song_list: Array<string> = []
     for (let group_id of config.data_group_list) {
         var data_group: Group = await bot.pickGroup(group_id)
-        var group_files: (GfsDirStat | GfsFileStat)[] = await data_group.fs.dir(...[, , 1500])
+        var group_files: (GfsDirStat | GfsFileStat)[] = await data_group.fs.dir(...[, , 100])
         var player_dir_fid: string = ""
         for (let filestat of group_files) {
-            if (filestat.is_dir && (filestat.name === player)){
+            if (filestat.is_dir && (filestat.name === player)) {
                 player_dir_fid = filestat.fid
                 break
             }
         }
-        var player_songs: (GfsDirStat | GfsFileStat)[] = await data_group.fs.dir(...[player_dir_fid, , 1500])
+        var player_songs: (GfsDirStat | GfsFileStat)[] = await data_group.fs.dir(...[player_dir_fid, , 100])
+        for (let index = 1; index < 15; index++) {
+            var next_files: (GfsDirStat | GfsFileStat)[] = await data_group.fs.dir(player_dir_fid, index * 100, index * 100 + 100)
+            if (next_files.length === 0) break
+            player_songs.push(...next_files)
+        }
         for (let filestat of player_songs) {
             song_list.push(filestat.name.replace('.pdf', ''));
         }
@@ -172,27 +177,27 @@ async function get_num_args(message: string): Promise<number[]> {
 async function searchFile(filename: string, player: string, ex_name: string, group_id: number): Promise<string[]> {
     return new Promise(async (resolve) => {
         var group: Group = await bot.pickGroup(group_id)
-        var group_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir(...[, , 1500])
+        var group_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir(...[, , 100])
         var filestats_all: GfsFileStat[] = []
         var filestats: GfsFileStat[] = []
         var promises: Promise<(GfsFileStat | GfsDirStat)[]>[] = [];
         var result: string[] = []
         var fullname: string = `${filename}.${ex_name}`
 
+        let filestats_dir: (GfsDirStat | GfsFileStat)[] = []
         for (let filestat of group_files) {
-            if (filestat.is_dir && (filestat.name === player)) promises.push(group.fs.dir(...[filestat.fid, , 1500]));
-        }
-        let filestats_dir = await Promise.all(promises);        //value [Dir1_filestats, Dir2_filestats, Dir3_filestats, ...]
-        filestats_dir.forEach((filestats) => {
-            filestats.forEach((filestat) => {
-                if ((filestat as GfsFileStat).name.endsWith(ex_name)) {
-                    filestats_all.push((filestat as GfsFileStat))
+            if (filestat.is_dir && (filestat.name === player)) {
+                filestats_dir.push(...await group.fs.dir(filestat.fid, 0, 100))
+                for (let index = 1; index < 15; index++) {
+                    var next_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir(filestat.fid, index * 100, index * 100 + 100)
+                    if (next_files.length === 0) break
+                    filestats_dir.push(...next_files)
                 }
-            })
-        })
+            }
+        }
 
         //判断关键词
-        filestats_all.forEach((filestat) => {
+        filestats_dir.forEach((filestat) => {
             if (compare(filestat.name, fullname)) result.push(filestat.fid);
             else;      //匹配失败，查找关键词别名列表
         })

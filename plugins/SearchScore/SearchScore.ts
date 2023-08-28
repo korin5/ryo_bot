@@ -72,28 +72,43 @@ bot.on("message.group", async function (msg) {
 async function searchFile(filename: string, ex_name: string, group_id: number, search_range: string = "all"): Promise<string[]> {
     return new Promise(async (resolve) => {
         var group: Group = await bot.pickGroup(group_id)
-        var group_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir(...[, , 1500])
+        // 由于api只支持一次请求100个文件，所以需要获取群文件数量，进行循环请求
+        var group_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir(...[, 0, 100])
+        for (let index = 1; index < 15; index++) {
+            var next_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir('/', index * 100, index * 100 + 100)
+            if (next_files.length === 0) break
+            group_files.push(...next_files)
+        }
         var filestats_inRoot: GfsFileStat[] = []
         var filestats_inDir: GfsFileStat[] = []
         var filestats: GfsFileStat[] = []
         var promises: Promise<(GfsFileStat | GfsDirStat)[]>[] = [];
         var result: string[] = []
         var fullname: string = `${filename}.${ex_name}`
+        var dir_pid_list: string[] = []
 
         for (let filestat of group_files) {
-            if (filestat.is_dir) promises.push(group.fs.dir(...[filestat.fid, , 1500]));
+            // if (filestat.is_dir) promises.push(group.fs.dir(filestat.fid,0 , 100));
+            if (filestat.is_dir) dir_pid_list.push(filestat.fid);
             else if ((filestat as GfsFileStat).name.endsWith(ex_name)) {
                 filestats_inRoot.push(filestat as GfsFileStat)
             }
         }
-        let filestats_dir = await Promise.all(promises);        //value [Dir1_filestats, Dir2_filestats, Dir3_filestats, ...]
-        filestats_dir.forEach((filestats) => {
-            filestats.forEach((filestat) => {
-                if ((filestat as GfsFileStat).name.endsWith(ex_name)) {
-                    filestats_inDir.push((filestat as GfsFileStat))
-                }
-            })
+        let filestats_dir: (GfsDirStat | GfsFileStat)[] = []
+        for (let pid of dir_pid_list) {
+            filestats_dir.push(...await group.fs.dir(pid, 0, 100))
+            for (let index = 1; index < 15; index++) {
+                var next_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir(pid, index * 100, index * 100 + 100)
+                if (next_files.length === 0) break
+                filestats_dir.push(...next_files)
+            }
+        }
+        filestats_dir.forEach((filestat) => {
+            if ((filestat as GfsFileStat).name.endsWith(ex_name)) {
+                filestats_inDir.push((filestat as GfsFileStat))
+            }
         })
+
         if (search_range === "all") filestats = filestats_inDir.concat(filestats_inRoot)
         if (search_range === "inDir") filestats = filestats_inDir
         if (search_range === "inRoot") filestats = filestats_inRoot
