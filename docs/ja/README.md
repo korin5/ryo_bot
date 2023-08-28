@@ -8,7 +8,7 @@ actions:
   - text: 使用方法
     link: /ja/use
     type: primary
-  - text: 自己紹介
+  - text: プロ紹介
     link: /ja/intro
     type: secondary
 features:
