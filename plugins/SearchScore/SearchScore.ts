@@ -56,7 +56,7 @@ bot.on("message.group", async function (msg) {
             }
         }
         if (!is_find) {
-            msg.group.sendMsg("找不到哦")
+            msg.group.sendMsg(`找不到${filename}的谱子哦`)
         }
     }
 })
