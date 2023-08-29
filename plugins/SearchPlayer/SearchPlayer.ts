@@ -9,7 +9,7 @@ const config = YAML.parse(file)
 
 bot.on("message.group", async function (msg) {
     if (!msg.raw_message.includes("/")) return
-    const player_list: Array<string> = await get_player_list()
+    const player_list: string[] = await get_player_list()
     var song_list: string[]
 
     //输入  /乐手
@@ -18,6 +18,7 @@ bot.on("message.group", async function (msg) {
         const message_list = player_list.map((line, index) => `${index + 1}. ${line}`).join('\n');
         msg.group.sendMsg("乐手列表\n" + message_list)
     }
+
     //输入  /乐手-1
     //返回  井草圣二曲目列表
     if ((msg.raw_message.replace(/\s/g, '').replace(/-\d+/g, '') === "/乐手") && /-\d+/g.test(msg.raw_message)) {
@@ -31,6 +32,7 @@ bot.on("message.group", async function (msg) {
             msg.group.sendMsg("找不到哦")
         }
     }
+
     //输入  /井草圣二
     //返回  井草圣二曲目列表
     if (player_list.includes(msg.raw_message.replace(/\s/g, '').replace('/', ''))) {
@@ -39,6 +41,7 @@ bot.on("message.group", async function (msg) {
         const message_list = song_list.map((line, index) => `${index + 1}. ${line}`).join('\n');
         msg.group.sendMsg(`${player}曲目列表\n` + message_list)
     }
+
     //输入  /井草圣二-7
     //返回  ONE.pdf
     if (player_list.includes(msg.raw_message.replace(/\s/g, '').replace('/', '').replace(/-\d+/g, '')) && /-\d+/g.test(msg.raw_message)) {
@@ -55,6 +58,7 @@ bot.on("message.group", async function (msg) {
             if (fid[0]) {
                 let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[0])
                 msg.group.fs.forward(filestat as GfsFileStat)
+                console.log(`${filestat.name}转发自数据库`)
                 is_find = true
                 break
             }
@@ -63,6 +67,7 @@ bot.on("message.group", async function (msg) {
             msg.group.sendMsg("找不到哦")
         }
     }
+
     //输入  /找-1-7
     //返回  ONE.pdf
     if (msg.raw_message.includes('/找') && /-\d+-\d+/.test(msg.raw_message)) {
@@ -79,6 +84,7 @@ bot.on("message.group", async function (msg) {
                 if (fid[0]) {
                     let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[0])
                     msg.group.fs.forward(filestat as GfsFileStat)
+                    console.log(`${filestat.name}转发自数据库`)
                     is_find = true
                     break
                 }
@@ -87,12 +93,11 @@ bot.on("message.group", async function (msg) {
         if (!is_find) {
             msg.group.sendMsg("找不到哦")
         }
-
     }
 })
 
 /**
- * 获取所有数据库群的乐手列表
+ * 获取所有数据库群的乐手列表（最多100个乐手）
  * @returns player_list
  */
 async function get_player_list() {
@@ -108,33 +113,36 @@ async function get_player_list() {
 }
 
 /** 
- * 获取所有数据库群收录的指定乐手的曲目列表
+ * 获取所有数据库群收录的指定乐手的曲目列表（最多100个乐手）
  * @param player 乐手名
  * @returns song_list
  */
 async function get_song_list(player: string): Promise<string[]> {
-    var song_list: Array<string> = []
+    var songname_list: string[] = []
     for (let group_id of config.data_group_list) {
         var data_group: Group = await bot.pickGroup(group_id)
-        var group_files: (GfsDirStat | GfsFileStat)[] = await data_group.fs.dir(...[, , 100])
-        var player_dir_fid: string = ""
-        for (let filestat of group_files) {
-            if (filestat.is_dir && (filestat.name === player)) {
-                player_dir_fid = filestat.fid
+        var stats_root: (GfsDirStat | GfsFileStat)[] = await data_group.fs.dir(...[, , 100])
+        var playerdir_fid: string = ""
+        for (let stat of stats_root) {
+            if (stat.is_dir && (stat.name === player)) {
+                playerdir_fid = stat.fid
                 break
             }
         }
-        var player_songs: (GfsDirStat | GfsFileStat)[] = await data_group.fs.dir(...[player_dir_fid, , 100])
-        for (let index = 1; index < 15; index++) {
-            var next_files: (GfsDirStat | GfsFileStat)[] = await data_group.fs.dir(player_dir_fid, index * 100, index * 100 + 100)
-            if (next_files.length === 0) break
-            player_songs.push(...next_files)
+        if (!playerdir_fid) break
+
+        var promises: Promise<(GfsDirStat | GfsFileStat)[]>[] = []
+        for (let index = 0; index < 15; index++) {
+            promises.push(data_group.fs.dir(...[playerdir_fid, index * 100, index * 100 + 100]))
         }
-        for (let filestat of player_songs) {
-            song_list.push(filestat.name.replace('.pdf', ''));
+        var filestats_list = await Promise.all(promises)
+        var filestats: GfsFileStat[] = []
+        for (let index = 0; index < 15; index++) {
+            filestats.push(...filestats_list[index] as GfsFileStat[])
         }
+        for (let filestat of filestats) songname_list.push(filestat.name.replace('.pdf', ''));
     }
-    return song_list.sort()
+    return songname_list.sort()
 }
 
 /**
@@ -167,7 +175,7 @@ async function get_num_args(message: string): Promise<number[]> {
 }
 
 /**
- * 搜索指定乐手的谱子
+ * 搜索指定乐手的谱子（最多100个乐手）
  * @param filename 谱名
  * @param player 乐手名
  * @param ex_name 文件扩展名
@@ -177,26 +185,27 @@ async function get_num_args(message: string): Promise<number[]> {
 async function searchFile(filename: string, player: string, ex_name: string, group_id: number): Promise<string[]> {
     return new Promise(async (resolve) => {
         var group: Group = await bot.pickGroup(group_id)
-        var group_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir(...[, , 100])
+        var stats_root: (GfsDirStat | GfsFileStat)[] = await group.fs.dir(...[, , 100])
         var filestats_all: GfsFileStat[] = []
         var filestats: GfsFileStat[] = []
-        var promises: Promise<(GfsFileStat | GfsDirStat)[]>[] = [];
-        var result: string[] = []
         var fullname: string = `${filename}.${ex_name}`
 
         let filestats_dir: (GfsDirStat | GfsFileStat)[] = []
-        for (let filestat of group_files) {
-            if (filestat.is_dir && (filestat.name === player)) {
-                filestats_dir.push(...await group.fs.dir(filestat.fid, 0, 100))
-                for (let index = 1; index < 15; index++) {
-                    var next_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir(filestat.fid, index * 100, index * 100 + 100)
-                    if (next_files.length === 0) break
-                    filestats_dir.push(...next_files)
+        for (let stat of stats_root) {
+            if (stat.is_dir && (stat.name === player)) {
+                var promises: Promise<(GfsFileStat | GfsDirStat)[]>[] = [];
+                for (let index = 0; index < 15; index++) {
+                    promises.push(group.fs.dir(...[stat.fid, index * 100, index * 100 + 100]))
+                }
+                var filestats_list = await Promise.all(promises)
+                for (let index = 0; index < 15; index++) {
+                    filestats_dir.push(...filestats_list[index] as GfsFileStat[])
                 }
             }
         }
 
         //判断关键词
+        var result: string[] = []
         filestats_dir.forEach((filestat) => {
             if (compare(filestat.name, fullname)) result.push(filestat.fid);
             else;      //匹配失败，查找关键词别名列表
