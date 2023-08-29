@@ -72,37 +72,49 @@ bot.on("message.group", async function (msg) {
 async function searchFile(filename: string, ex_name: string, group_id: number, search_range: string = "all"): Promise<string[]> {
     return new Promise(async (resolve) => {
         var group: Group = await bot.pickGroup(group_id)
-        // 由于api只支持一次请求100个文件，所以需要获取群文件数量，进行循环请求
-        var group_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir(...[, 0, 100])
-        for (let index = 1; index < 15; index++) {
-            var next_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir('/', index * 100, index * 100 + 100)
-            if (next_files.length === 0) break
-            group_files.push(...next_files)
+        // 由于api只支持一次请求100个文件，所以需要获取群文件数量，计算请求范围，发起多次请求
+        // 根目录文件请求
+        var promises: Promise<(GfsDirStat | GfsFileStat)[]>[] = []
+        for (let index = 0; index < 15; index++) {
+            promises.push(group.fs.dir(...[, index*100, index*100+100]))
         }
+        var group_files_list = await Promise.all(promises)
+        var group_files: (GfsDirStat | GfsFileStat)[] = []
+        for (let index = 0; index < 15; index++) {
+            group_files.push(...group_files_list[index])
+        }
+
         var filestats_inRoot: GfsFileStat[] = []
         var filestats_inDir: GfsFileStat[] = []
         var filestats: GfsFileStat[] = []
         var promises: Promise<(GfsFileStat | GfsDirStat)[]>[] = [];
         var result: string[] = []
         var fullname: string = `${filename}.${ex_name}`
-        var dir_pid_list: string[] = []
+        var dir_stat_list: (GfsDirStat | GfsFileStat)[] = []
 
+        // 根目录文件分类，根目录文件筛选拓展名
         for (let filestat of group_files) {
-            // if (filestat.is_dir) promises.push(group.fs.dir(filestat.fid,0 , 100));
-            if (filestat.is_dir) dir_pid_list.push(filestat.fid);
+            if (filestat.is_dir) dir_stat_list.push(filestat);
             else if ((filestat as GfsFileStat).name.endsWith(ex_name)) {
                 filestats_inRoot.push(filestat as GfsFileStat)
             }
         }
+        // 文件夹文件请求
         let filestats_dir: (GfsDirStat | GfsFileStat)[] = []
-        for (let pid of dir_pid_list) {
-            filestats_dir.push(...await group.fs.dir(pid, 0, 100))
-            for (let index = 1; index < 15; index++) {
-                var next_files: (GfsDirStat | GfsFileStat)[] = await group.fs.dir(pid, index * 100, index * 100 + 100)
-                if (next_files.length === 0) break
-                filestats_dir.push(...next_files)
+        for (let stat  of dir_stat_list) {
+            if((stat as GfsDirStat) .file_count==0) continue
+            var promise_count:number = Math.floor((stat as GfsDirStat) .file_count / 100) + 1
+            var promises: Promise<(GfsDirStat | GfsFileStat)[]>[] = []
+
+            for (let index = 0; index < promise_count; index++) {
+                promises.push(group.fs.dir(...[stat.fid, index*100, index*100+100]))
+            }
+            var dir_files_list = await Promise.all(promises)
+            for (let index = 0; index < promise_count; index++) {
+                filestats_dir.push(...dir_files_list[index])
             }
         }
+        // 文件夹文件筛选拓展名
         filestats_dir.forEach((filestat) => {
             if ((filestat as GfsFileStat).name.endsWith(ex_name)) {
                 filestats_inDir.push((filestat as GfsFileStat))
@@ -116,7 +128,7 @@ async function searchFile(filename: string, ex_name: string, group_id: number, s
         //判断关键词
         filestats.forEach((filestat) => {
             if (compare(filestat.name, fullname)) result.push(filestat.fid);
-            else;      //匹配失败，查找关键词别名列表
+            else;      //匹配失败
         })
 
         if (result.length > 0) resolve(result); else resolve([]);
