@@ -241,9 +241,3 @@ function compare(word1: string, word2: string): boolean {
     if (word1 === word2) return true;
     else return false
 }
-
-bot.on("message.private", (msg) => {
-    if (msg.raw_message.includes("/乐手")) {
-        msg.friend.sendMsg("请在群内使用哦")
-    }
-})

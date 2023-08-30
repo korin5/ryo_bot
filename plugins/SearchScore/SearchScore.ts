@@ -210,9 +210,3 @@ async function get_msg_info(message: string): Promise<[string, number, string]> 
     if (match) arg_num = parseInt(match[1]);
     return [filename, arg_num, arg_str]
 }
-
-bot.on("message.private", (msg) => {
-    if (msg.raw_message.includes("/找")) {
-        msg.friend.sendMsg("请在群内使用哦")
-    }
-})
