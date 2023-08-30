@@ -21,13 +21,13 @@ ryo 处于测试阶段，会进行不定期的维护，提建议提问或提bug�
 在QQ群里发送 `/找流行的云`，ryo开始查找曲谱，找到后返回 `[文件]流行的云.pdf`
 :::
 
-![search](.vuepress/public/images/search.webp)
+![search](images/search.webp)
 
 ::: tip
 如果这个文件不是你想要的曲谱，你可以发送 `/找流行的云-2`，让ryo找到第2个 `[文件]流行的云.pdf`
 :::
 
-![optionsearch](.vuepress/public/images/optionsearch.webp)
+![optionsearch](images/optionsearch.webp)
 
 注意：指令不能私聊使用
 
