@@ -13,7 +13,7 @@ actions:
     type: secondary
 features:
   - title: 目的
-    details: 为吉他爱好者提供快速便捷的找谱服务，分享大陆用户不方便购买的热门曲谱
+    details: 为中国大陆吉他爱好者提供快速便捷的找谱服务，分享中国大陆用户不能购买的热门曲谱
   - title: 特点
     details: 能在众多QQ群文件中进行搜索，找到你需要的曲谱
   - title: 未来
