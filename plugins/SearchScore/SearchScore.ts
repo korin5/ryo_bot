@@ -25,7 +25,7 @@ bot.on("message.group", async function (msg) {
         if (search_group_range !== "other") {
             for (let i in config.data_group_list) {
                 let group: Group = await bot.pickGroup(config.data_group_list[i])
-                fid.push(...await searchFile(filename, "pdf", config.data_group_list[i], search_file_range))
+                fid.push(...await searchFile(filename, "pdf", config.data_group_list[i], search_file_range, false))
                 if (fid[select]) {
                     let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[select])
                     msg.group.fs.forward(filestat as GfsFileStat)
@@ -42,11 +42,8 @@ bot.on("message.group", async function (msg) {
                 if (config.data_group_list.includes(g?.group_id)) continue // 跳过数据库群
                 if (config.black_list.includes(g?.group_id)) continue       //跳过黑名单
                 let group: Group = await bot.pickGroup(g?.group_id)
-                fid.push(...await searchFile(filename, "pdf", g?.group_id, search_file_range))
+                fid.push(...await searchFile(filename, "pdf", g?.group_id, search_file_range, true))
                 if (fid[select]) {
-                    // if (select >= 2) msg.group.sendMsg(`第${select + 1}个转发自${group.group_id}`);
-                    // else msg.group.sendMsg(`转发自${group.group_id}`)
-                    // msg.group.sendMsg(`转发自${group.group_id}`)
                     let filestat: GfsFileStat | GfsDirStat = await group.fs.stat(fid[select])
                     msg.group.fs.forward(filestat as GfsFileStat)
                     console.log(`${filestat.name}转发自${group.group_id}`)
@@ -69,17 +66,16 @@ bot.on("message.group", async function (msg) {
  * @param search_range `all` 全部(默认); `inDir` 在文件夹内搜索; `inRoot` 在根目录搜索
  * @returns 所有结果文件的fid的集合，如果没有则返回空 []
 */
-async function searchFile(filename: string, ex_name: string, group_id: number, search_range: string = "all"): Promise<string[]> {
+async function searchFile(filename: string, ex_name: string, group_id: number, search_range: string = "all", fuzzy: boolean): Promise<string[]> {
     return new Promise(async (resolve) => {
         var group: Group = await bot.pickGroup(group_id)
-        var fullname: string = `${filename}.${ex_name}`
         // 由于api只支持一次请求100个文件，所以需要发起多次请求
 
         // 根目录文件请求
         var stats_root: (GfsDirStat | GfsFileStat)[] = []
         var promises_root: Promise<(GfsDirStat | GfsFileStat)[]>[] = []
         for (let index = 0; index < 15; index++) {
-            promises_root.push(group.fs.dir(...[, index*100, index*100+100]))
+            promises_root.push(group.fs.dir(...[, index * 100, index * 100 + 100]))
         }
         var stats_root_list = await Promise.all(promises_root)
         for (let index = 0; index < 15; index++) {
@@ -98,13 +94,13 @@ async function searchFile(filename: string, ex_name: string, group_id: number, s
         // 文件夹文件请求
         var promises_dir: Promise<(GfsFileStat | GfsDirStat)[]>[] = [];
         let filestats_dir_all: GfsFileStat[] = []
-        for (let stat  of dirstats_root) {
-            if((stat as GfsDirStat) .file_count==0) continue
-            var promise_count:number = Math.floor((stat as GfsDirStat) .file_count / 100) + 1
+        for (let stat of dirstats_root) {
+            if ((stat as GfsDirStat).file_count == 0) continue
+            var promise_count: number = Math.floor((stat as GfsDirStat).file_count / 100) + 1
             var promises_dir: Promise<(GfsDirStat | GfsFileStat)[]>[] = []
 
             for (let index = 0; index < promise_count; index++) {
-                promises_dir.push(group.fs.dir(...[stat.fid, index*100, index*100+100]))
+                promises_dir.push(group.fs.dir(...[stat.fid, index * 100, index * 100 + 100]))
             }
             var dir_files_list = await Promise.all(promises_dir)
             for (let index = 0; index < promise_count; index++) {
@@ -128,10 +124,20 @@ async function searchFile(filename: string, ex_name: string, group_id: number, s
 
         //判断关键词
         var result: string[] = []
-        filestats.forEach((filestat) => {
-            if (compare(filestat.name, fullname)) result.push(filestat.fid);
-            else;      //匹配失败
-        })
+        if (fuzzy) {
+            filestats.forEach((filestat) => {
+                // 模糊匹配
+                console.log(filestat.name)
+                if (fuzzycompare(filestat.name.replace(`.${ex_name}`,''), filename)) result.push(filestat.fid);
+                else;
+            })
+        }else{
+            filestats.forEach((filestat) => {
+                // 精准匹配
+                if (compare(filestat.name.replace(`.${ex_name}`,''), filename)) result.push(filestat.fid);
+                else;
+            })
+        }
 
         if (result.length > 0) resolve(result); else resolve([]);
     });
@@ -165,6 +171,33 @@ function compare(word1: string, word2: string): boolean {
 }
 
 /**
+ * 模糊比较两个字符串是否匹配（只要包含即可匹配成功）
+ * @param word1 字符串1 (不带拓展名)
+ * @param word2 字符串2 (不带拓展名)
+ * @returns 匹配返回 `true` ; 不匹配返回 `false`
+ */
+function fuzzycompare(word1: string, word2: string): boolean {
+
+    word1 = word1.toLowerCase()     //去大小写
+    word2 = word2.toLowerCase()
+
+    if (word1.includes(' ') || word2.includes(' ')) {   //去空格
+        word1 = word1.replace(/\s/g, '')
+        word2 = word2.replace(/\s/g, '')
+    }
+
+    if (word1.includes('(') || word1.includes('（') || word2.includes('(') || word2.includes('（')) {   //去括号
+        word1 = word1.replace(/\([^)]*\d+[^)]*\)/g, '')
+        word2 = word2.replace(/\([^)]*\d+[^)]*\)/g, '')
+        word1 = word1.replace(/\（[^）]*\d+[^）]*\）/g, '')
+        word2 = word2.replace(/\（[^）]*\d+[^）]*\）/g, '')
+    }
+
+    if (word1.includes(word2) || word2.includes(word1)) return true;
+    else return false
+}
+
+/**
  * 解析消息 (考虑到文件名可能包含 `-` ,所以目前仅支持数字参数)
  * @param message 消息文本
  * @returns `[文件名,数字参数,字符参数]` 类型分别为 str , num , str
@@ -177,9 +210,3 @@ async function get_msg_info(message: string): Promise<[string, number, string]> 
     if (match) arg_num = parseInt(match[1]);
     return [filename, arg_num, arg_str]
 }
-
-bot.on("message.private", (msg) => {
-    if (msg.raw_message.includes("/找")) {
-        msg.friend.sendMsg("请在群内使用哦")
-    }
-})
